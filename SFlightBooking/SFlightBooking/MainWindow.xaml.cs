@@ -21,5 +21,11 @@ namespace SFlightBooking {
         public MainWindow() {
             InitializeComponent();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e) {
+            Registration rg = new Registration();
+
+            rg.Show();
+        }
     }
 }

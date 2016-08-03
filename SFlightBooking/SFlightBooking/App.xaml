@@ -11,6 +11,11 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="MaterialDesignDarkRadioButton" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource MaterialDesignRadioButton}">
+                <Setter Property="Background" Value="{DynamicResource PrimaryHueDarkBrush}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueDarkBrush}"/>
+                <Setter Property="Foreground" Value="{DynamicResource PrimaryHueDarkForegroundBrush}"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
