@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SFlightBooking"
         mc:Ignorable="d"
-        Title="Registration" Height="486.439" Width="640"
+        Title="Registration" Height="516.839" Width="488.8"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -13,42 +13,40 @@
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}"
+        FontFamily="{DynamicResource MaterialDesignFont}" ResizeMode="NoResize"
         >
 
-    <Grid Margin="0,0,3.6,-1.4">
-
-        <materialDesign:Card Padding="10" Margin="10,10,0,0" HorizontalAlignment="Left" Width="331" VerticalAlignment="Top" Height="271" >
+    <Grid Margin="0,0,3.8,-0.4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="247*"/>
+            <ColumnDefinition Width="231*"/>
+        </Grid.ColumnDefinitions>
+        <materialDesign:Card Margin="10,10,8.4,0" Height="248" Grid.ColumnSpan="2">
             <Grid>
-                <TextBox x:Name="tb_firstName" materialDesign:HintAssist.Hint="First Name" HorizontalAlignment="Left" Height="23" Margin="10,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
-                <TextBox x:Name="tb_lastName" materialDesign:HintAssist.Hint="Last Name" HorizontalAlignment="Left" Height="23" Margin="10,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
-                <TextBox x:Name="tb_number" materialDesign:HintAssist.Hint="Phone Number" HorizontalAlignment="Left" Height="23" Margin="10,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
-                <DatePicker x:Name="dp_birth" materialDesign:HintAssist.Hint="Birth Date" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Width="206"/>
-                <GroupBox>
-                    <Grid Height="221" VerticalAlignment="Top" Margin="0,10,0,-16.6">
-                        <RadioButton x:Name="rb_male" Content="Male" HorizontalAlignment="Left" Margin="24,169,0,0" VerticalAlignment="Top" GroupName="gender"/>
-                        <RadioButton x:Name="rb_female" Content="Female" HorizontalAlignment="Left" Margin="170,169,0,0" VerticalAlignment="Top" GroupName="gender"/>
+                <TextBox x:Name="tb_firstName" HorizontalAlignment="Left" Height="23" Margin="23,54,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="First name" VerticalAlignment="Top" Width="191"/>
+                <TextBox x:Name="tb_lastName" HorizontalAlignment="Left" Height="23" Margin="241,54,0,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Last name"  VerticalAlignment="Top" Width="191"/>
+                <TextBox x:Name="tb_phoneNumber" HorizontalAlignment="Left" Height="23" Margin="241,111,0,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Phone" VerticalAlignment="Top" Width="191"/>
+                <TextBox x:Name="tb_address" HorizontalAlignment="Left" Height="23" Margin="23,111,0,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Address" VerticalAlignment="Top" Width="191"/>
+                <DatePicker x:Name="dp_birth" materialDesign:HintAssist.Hint="Birth Date" HorizontalAlignment="Left" Margin="23,167,0,0" VerticalAlignment="Top" Width="191"/>
+                <GroupBox Margin="241,139,9.6,37.4" Header="Gender">
+                    <Grid>
+                        <RadioButton x:Name="rb_male" Margin="0,0,74.8,0.2" Content="Male"/>
+                        <RadioButton x:Name="rb_female" Margin="107,0,-0.2,0.2" Content="Female"/>
                     </Grid>
                 </GroupBox>
             </Grid>
         </materialDesign:Card>
-        <materialDesign:Card Padding="10" Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="264" Height="271" >
+        <GroupBox Margin="19,274,10.4,119.6" Grid.ColumnSpan="2" Header="Emergency Contact">
             <Grid>
-                <TextBox x:Name="tb_address" materialDesign:HintAssist.Hint="Address" HorizontalAlignment="Left" Height="23" Margin="10,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
-
+                <TextBox x:Name="tb_enName" Height="23" Margin="10,19,304.4,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Name" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="tb_enRelation" Height="23" Margin="157,19,157.4,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Relationship" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="tb_enPhone" Height="23" Margin="304,19,10.4,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Phone" VerticalAlignment="Top" Width="120"/>
             </Grid>
-        </materialDesign:Card>
-        <materialDesign:Card Padding="10" Margin="0,143,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="600" Height="235" >
-            <Grid>
-                <TextBox materialDesign:HintAssist.Hint="Name" Width="206" Margin="10,-35,354.4,34.2"/>
-                <TextBox materialDesign:HintAssist.Hint="Relationship" Width="206" Margin="354,-35,10.4,34.2"/>
-                <TextBox materialDesign:HintAssist.Hint="Contact number" Width="206" Margin="10,-1,354.4,0.2"/>
+        </GroupBox>
+        <Button  Style="{StaticResource MaterialDesignRaisedAccentButton}" x:Name="btn_register" Content="Register" HorizontalAlignment="Left" Margin="18,395,0,0" VerticalAlignment="Top" Width="450" Grid.ColumnSpan="2" Click="btn_register_Click"/>
+        <Button x:Name="btn_clear" Content="Clear" HorizontalAlignment="Left" Margin="19,446,0,0" VerticalAlignment="Top" Width="218" Click="btn_clear_Click"/>
+        <Button x:Name="btn_exit" Content="Exit" HorizontalAlignment="Left" Margin="9.8,446,0,0" VerticalAlignment="Top" Width="211" RenderTransformOrigin="0.507,0.45" Grid.Column="1" Click="btn_exit_Click"/>
 
-            </Grid>
-        </materialDesign:Card>
-        <Button  Style="{StaticResource MaterialDesignRaisedAccentButton}" x:Name="btn_register" Content="Register" HorizontalAlignment="Left" Margin="20,397,0,0" VerticalAlignment="Top" Width="321"/>
-        <Button x:Name="btn_clear" Content="Clear" HorizontalAlignment="Left" Margin="356,397,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btn_exit" Content="Exit" HorizontalAlignment="Left" Margin="491,397,0,0" VerticalAlignment="Top" Width="120"/>
     </Grid>
 
 </Window>

@@ -22,10 +22,15 @@ namespace SFlightBooking {
             InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e) {
+        private void btn_registerForm_Click(object sender, RoutedEventArgs e) {
             Registration rg = new Registration();
 
             rg.Show();
+        }
+
+        private void btn_customerListForm_Click(object sender, RoutedEventArgs e) {
+            CustomersList cl = new CustomersList();
+            cl.Show();
         }
     }
 }

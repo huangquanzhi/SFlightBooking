@@ -21,5 +21,24 @@ namespace SFlightBooking {
             InitializeComponent();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void btn_update_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void btn_delete_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void btn_viewRecord_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void btn_book_Click(object sender, RoutedEventArgs e) {
+
+        }
     }
 }
