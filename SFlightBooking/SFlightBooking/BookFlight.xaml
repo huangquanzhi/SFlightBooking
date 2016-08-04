@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SFlightBooking"
         mc:Ignorable="d"
-        Title="BookFlight" Height="300" Width="300">
+        Title="BookFlight" Height="348.293" Width="547.317">
     <Grid>
-        
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="190" Margin="32,27,0,0" VerticalAlignment="Top" Width="330">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+            <ListBoxItem Content="Test"/>
+        </ListView>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="190" Margin="385,27,0,0" VerticalAlignment="Top" Width="133">
+            <ListBoxItem Content="Test"/>
+        </ListBox>
+        <Button x:Name="btn_bookFlight" Content="Book Flight" HorizontalAlignment="Left" Margin="142,259,0,0" VerticalAlignment="Top" Width="257"/>
+
     </Grid>
 </Window>

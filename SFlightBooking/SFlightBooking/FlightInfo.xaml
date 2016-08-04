@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SFlightBooking"
         mc:Ignorable="d"
-        Title="FlightInfo" Height="300" Width="300">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+    Title="FlightInfo" Height="381.952" Width="567.073" ResizeMode="NoResize">
     <Grid>
-        
+        <TextBox x:Name="tb_location" HorizontalAlignment="Left" Height="23" Margin="60,48,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Location" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_destination" HorizontalAlignment="Left" Height="23" Margin="209,48,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Destination"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_duration" HorizontalAlignment="Left" Height="23" Margin="372,48,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Duration"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_capacity" HorizontalAlignment="Left" Height="23" Margin="372,101,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Capacity" VerticalAlignment="Top" Width="120"/>
+        <materialDesign:TimePicker x:Name="tp_time" HorizontalAlignment="Left" Margin="209,101,0,0" VerticalAlignment="Top" Width="120"/>
+        <DatePicker x:Name="dp_date" HorizontalAlignment="Left" Margin="60,101,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="60,158,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Test"/>
+        </ComboBox>
+        <GroupBox x:Name="groupBox" Header="Status" HorizontalAlignment="Left" Margin="60,215,0,0" VerticalAlignment="Top" Height="103" Width="460"/>
+
     </Grid>
 </Window>

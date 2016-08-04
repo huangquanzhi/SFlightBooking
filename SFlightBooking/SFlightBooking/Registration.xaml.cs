@@ -20,5 +20,17 @@ namespace SFlightBooking {
         public Registration() {
             InitializeComponent();
         }
+
+        private void btn_register_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void btn_clear_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e) {
+
+        }
     }
 }

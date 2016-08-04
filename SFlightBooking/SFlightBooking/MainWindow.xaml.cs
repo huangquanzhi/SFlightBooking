@@ -32,5 +32,20 @@ namespace SFlightBooking {
             CustomersList cl = new CustomersList();
             cl.Show();
         }
+
+        private void btn_customerFlightForm_Click(object sender, RoutedEventArgs e) {
+            CustomerFlightTable cf = new CustomerFlightTable();
+            cf.Show();
+        }
+
+        private void btn_flightInfoForm_Click(object sender, RoutedEventArgs e) {
+            FlightInfo fi = new FlightInfo();
+            fi.Show();
+        }
+
+        private void btn_bookFlight_Click(object sender, RoutedEventArgs e) {
+            BookFlight bl = new BookFlight();
+            bl.Show();
+        }
     }
 }

@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SFlightBooking"
         mc:Ignorable="d"
-        Title="CustomerFlightTable" Height="300" Width="300">
+        Title="CustomerFlightTable" Height="290.488" Width="563.415" ResizeMode="NoResize">
     <Grid>
-        
+        <ListView x:Name="lv_customerFlight" HorizontalAlignment="Left" Height="169" Margin="21,10,0,0" VerticalAlignment="Top" Width="505">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btn_removeFlight" Content="Remove Flight" HorizontalAlignment="Left" Margin="57,200,0,0" VerticalAlignment="Top" Width="169"/>
+        <Button x:Name="btn_bookFlight" Content="Book Flight" HorizontalAlignment="Left" Margin="331,200,0,0" VerticalAlignment="Top" Width="169"/>
+
     </Grid>
 </Window>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SFlightBooking"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525"
+        Title="MainWindow" Height="472.442" Width="525"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -13,13 +13,13 @@
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}"
+        FontFamily="{DynamicResource MaterialDesignFont}" ResizeMode="NoResize"
         >
     <Grid>
-        <materialDesign:Card Padding="32" Margin="16">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">Material Design App</TextBlock>
-        </materialDesign:Card>
-        <Button Content="Registers" x:Name="btn_registerForm" Margin="133,141,125.4,147.8" Click="btn_registerForm_Click"/>
-        <Button Content="Customer List" x:Name="btn_customerListForm" Margin="133,190,127.4,98.8" Click="btn_customerListForm_Click"/>
-     </Grid>
+        <Button Content="Registers" x:Name="btn_registerForm" Margin="127,43,131.4,368.2" Click="btn_registerForm_Click"/>
+        <Button Content="Customer List" x:Name="btn_customerListForm" Margin="129,120,131.4,291.2" Click="btn_customerListForm_Click"/>
+        <Button Content="Customer Flight" x:Name="btn_customerFlightForm" Margin="127,193,133.4,218.2" Click="btn_customerFlightForm_Click"/>
+        <Button Content="Flight info" x:Name="btn_flightInfoForm" Margin="127,272,133.4,139.2" Click="btn_flightInfoForm_Click"/>
+        <Button Content="Book Flight" x:Name="btn_bookFlight" Margin="127,350,133.4,61.2" Click="btn_bookFlight_Click" />
+    </Grid>
 </Window>
