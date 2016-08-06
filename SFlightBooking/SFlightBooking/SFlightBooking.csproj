@@ -68,6 +68,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Airline.cs" />
     <Compile Include="BookFlight.xaml.cs">
       <DependentUpon>BookFlight.xaml</DependentUpon>
     </Compile>
@@ -79,6 +80,7 @@
     <Compile Include="CustomersList.xaml.cs">
       <DependentUpon>CustomersList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Flight.cs" />
     <Compile Include="FlightInfo.xaml.cs">
       <DependentUpon>FlightInfo.xaml</DependentUpon>
     </Compile>

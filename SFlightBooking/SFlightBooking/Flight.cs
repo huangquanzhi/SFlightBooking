@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace SFlightBooking
 {
-    class Flight
+
+
+    public class Flight
     {
+        private string flightID;
+        private string departure;
+        private string destination;
+        private string duration;
+        private string date;
+        private string time;
+        private int availbleSeats;
+        private string status;
+
     }
 }

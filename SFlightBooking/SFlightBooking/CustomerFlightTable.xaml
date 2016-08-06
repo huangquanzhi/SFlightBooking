@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SFlightBooking"
         mc:Ignorable="d"
-        Title="CustomerFlightTable" Height="290.488" Width="563.415" ResizeMode="NoResize">
+        Title="CustomerFlightTable" Height="290.488" Width="703.37" ResizeMode="NoResize">
     <Grid>
-        <ListView x:Name="lv_customerFlight" HorizontalAlignment="Left" Height="169" Margin="21,10,0,0" VerticalAlignment="Top" Width="505">
+        <ListView x:Name="lv_customerFlight" HorizontalAlignment="Left" Height="169" Margin="21,10,0,0" VerticalAlignment="Top" Width="659">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="btn_removeFlight" Content="Remove Flight" HorizontalAlignment="Left" Margin="57,200,0,0" VerticalAlignment="Top" Width="169"/>
-        <Button x:Name="btn_bookFlight" Content="Book Flight" HorizontalAlignment="Left" Margin="331,200,0,0" VerticalAlignment="Top" Width="169"/>
+        <Button x:Name="btn_removeFlight" Content="Remove Flight" HorizontalAlignment="Left" Margin="21,200,0,0" VerticalAlignment="Top" Width="169" Click="btn_removeFlight_Click"/>
+        <Button x:Name="btn_close" Content="Close" HorizontalAlignment="Left" Margin="511,200,0,0" VerticalAlignment="Top" Width="169" Click="btn_close_Click"/>
 
     </Grid>
 </Window>
