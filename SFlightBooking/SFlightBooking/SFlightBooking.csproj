@@ -71,6 +71,7 @@
     <Compile Include="BookFlight.xaml.cs">
       <DependentUpon>BookFlight.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Customer.cs" />
     <Compile Include="CustomerFlightTable.xaml.cs">
       <DependentUpon>CustomerFlightTable.xaml</DependentUpon>
     </Compile>

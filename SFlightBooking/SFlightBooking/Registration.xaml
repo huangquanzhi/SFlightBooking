@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SFlightBooking"
         mc:Ignorable="d"
-        Title="Registration" Height="516.839" Width="488.8"
+        Title="Registration" Height="525.839" Width="497.8"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -21,14 +21,14 @@
             <ColumnDefinition Width="247*"/>
             <ColumnDefinition Width="231*"/>
         </Grid.ColumnDefinitions>
-        <materialDesign:Card Margin="10,10,8.4,0" Height="248" Grid.ColumnSpan="2">
+        <materialDesign:Card Margin="10,10,10,0" Height="248" Grid.ColumnSpan="2">
             <Grid>
                 <TextBox x:Name="tb_firstName" HorizontalAlignment="Left" Height="23" Margin="23,54,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="First name" VerticalAlignment="Top" Width="191"/>
                 <TextBox x:Name="tb_lastName" HorizontalAlignment="Left" Height="23" Margin="241,54,0,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Last name"  VerticalAlignment="Top" Width="191"/>
                 <TextBox x:Name="tb_phoneNumber" HorizontalAlignment="Left" Height="23" Margin="241,111,0,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Phone" VerticalAlignment="Top" Width="191"/>
                 <TextBox x:Name="tb_address" HorizontalAlignment="Left" Height="23" Margin="23,111,0,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Address" VerticalAlignment="Top" Width="191"/>
                 <DatePicker x:Name="dp_birth" materialDesign:HintAssist.Hint="Birth Date" HorizontalAlignment="Left" Margin="23,167,0,0" VerticalAlignment="Top" Width="191"/>
-                <GroupBox Margin="241,139,9.6,37.4" Header="Gender">
+                <GroupBox Margin="241,139,10,28" Header="Gender">
                     <Grid>
                         <RadioButton x:Name="rb_male" Margin="0,0,74.8,0.2" Content="Male"/>
                         <RadioButton x:Name="rb_female" Margin="107,0,-0.2,0.2" Content="Female"/>
@@ -36,7 +36,7 @@
                 </GroupBox>
             </Grid>
         </materialDesign:Card>
-        <GroupBox Margin="19,274,10.4,119.6" Grid.ColumnSpan="2" Header="Emergency Contact">
+        <GroupBox Margin="19,274,20,120.4" Grid.ColumnSpan="2" Header="Emergency Contact">
             <Grid>
                 <TextBox x:Name="tb_enName" Height="23" Margin="10,19,304.4,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Name" VerticalAlignment="Top" Width="120"/>
                 <TextBox x:Name="tb_enRelation" Height="23" Margin="157,19,157.4,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Relationship" VerticalAlignment="Top" Width="120"/>

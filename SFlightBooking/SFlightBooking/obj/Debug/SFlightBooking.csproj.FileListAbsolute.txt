@@ -27,7 +27,6 @@ C:\Users\Jackie\Desktop\Github\SFlightBooking\SFlightBooking\SFlightBooking\obj\
 C:\Users\Jackie\Desktop\Github\SFlightBooking\SFlightBooking\SFlightBooking\obj\Debug\SFlightBooking.csproj.GenerateResource.Cache
 C:\Users\Jackie\Desktop\Github\SFlightBooking\SFlightBooking\SFlightBooking\obj\Debug\SFlightBooking.exe
 C:\Users\Jackie\Desktop\Github\SFlightBooking\SFlightBooking\SFlightBooking\obj\Debug\SFlightBooking.pdb
-C:\Users\Jackie\Desktop\Github\SFlightBooking\SFlightBooking\SFlightBooking\bin\Debug\MahApps.Metro.dll
 C:\Users\Jackie\Desktop\Github\SFlightBooking\SFlightBooking\SFlightBooking\bin\Debug\System.Windows.Interactivity.dll
 C:\Users\Jackie\Desktop\Github\SFlightBooking\SFlightBooking\SFlightBooking\bin\Debug\MahApps.Metro.pdb
 C:\Users\Jackie\Desktop\Github\SFlightBooking\SFlightBooking\SFlightBooking\bin\Debug\MahApps.Metro.xml

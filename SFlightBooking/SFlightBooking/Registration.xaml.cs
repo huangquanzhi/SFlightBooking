@@ -12,24 +12,58 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace SFlightBooking {
+namespace SFlightBooking
+{
     /// <summary>
     /// Interaction logic for Registration.xaml
     /// </summary>
-    public partial class Registration : Window {
-        public Registration() {
+    public partial class Registration : Window
+    {
+        public Registration()
+        {
             InitializeComponent();
         }
 
-        private void btn_register_Click(object sender, RoutedEventArgs e) {
+        private void btn_register_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // customer object
+                Customer reg = new Customer(
+                    tb_firstName.Text,
+                    tb_lastName.Text,
+                    tb_address.Text,
+                    tb_phoneNumber.Text,
+                    dp_birth.Text,
+                    "male",
+                    tb_enName.Text,
+                    tb_enRelation.Text,
+                    tb_enPhone.Text
+                    );
 
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
-        private void btn_clear_Click(object sender, RoutedEventArgs e) {
-
+        private void btn_clear_Click(object sender, RoutedEventArgs e)
+        {
+            tb_firstName.Text = "";
+            tb_lastName.Text = "";
+            tb_address.Text = "";
+            tb_phoneNumber.Text = "";
+            dp_birth.Text = "";
+            //TODO: radio reset
+            tb_enName.Text = "";
+            tb_enRelation.Text = "";
+            tb_enPhone.Text = "";
         }
 
-        private void btn_exit_Click(object sender, RoutedEventArgs e) {
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
