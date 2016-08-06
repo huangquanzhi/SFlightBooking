@@ -43,7 +43,7 @@
                 <TextBox x:Name="tb_enPhone" Height="23" Margin="304,19,10.4,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Phone" VerticalAlignment="Top" Width="120"/>
             </Grid>
         </GroupBox>
-        <Button  Style="{StaticResource MaterialDesignRaisedAccentButton}" x:Name="btn_register" Content="Register" HorizontalAlignment="Left" Margin="18,395,0,0" VerticalAlignment="Top" Width="450" Grid.ColumnSpan="2" Click="btn_register_Click"/>
+        <Button  Style="{StaticResource MaterialDesignRaisedAccentButton}" x:Name="btn_register" Content="Save" HorizontalAlignment="Left" Margin="18,395,0,0" VerticalAlignment="Top" Width="450" Grid.ColumnSpan="2" Click="btn_register_Click"/>
         <Button x:Name="btn_clear" Content="Clear" HorizontalAlignment="Left" Margin="19,446,0,0" VerticalAlignment="Top" Width="218" Click="btn_clear_Click"/>
         <Button x:Name="btn_exit" Content="Exit" HorizontalAlignment="Left" Margin="9.8,446,0,0" VerticalAlignment="Top" Width="211" RenderTransformOrigin="0.507,0.45" Grid.Column="1" Click="btn_exit_Click"/>
 

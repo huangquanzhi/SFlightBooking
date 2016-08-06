@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SFlightBooking
 {
-    class Customer
+    public class Customer
     {
 
         string firstName;
@@ -21,7 +21,7 @@ namespace SFlightBooking
 
         public Customer()
         {
-           
+
         }
 
         public Customer(string firstName, string lastName, string address, string phone, string birthDate, string gender, string enmergencyName, string enmergencyRelationship, string enmergencyPhone)
@@ -46,7 +46,14 @@ namespace SFlightBooking
 
             set
             {
-                firstName = value;
+                if (value != "")
+                {
+                    firstName = value;
+                }
+                else
+                {
+                    throw new CustomerException("First name can not be empty!");
+                }
             }
         }
 
@@ -59,7 +66,14 @@ namespace SFlightBooking
 
             set
             {
-                lastName = value;
+                if (value != "")
+                {
+                    lastName = value;
+                }
+                else
+                {
+                    throw new CustomerException("Last name can not be empty!");
+                }
             }
         }
 
@@ -72,7 +86,14 @@ namespace SFlightBooking
 
             set
             {
-                address = value;
+                if (value != "")
+                {
+                    address = value;
+                }
+                else
+                {
+                    throw new CustomerException("Address can not be empty!");
+                }
             }
         }
 
@@ -85,7 +106,14 @@ namespace SFlightBooking
 
             set
             {
-                phone = value;
+                if (value != "")
+                {
+                    phone = value;
+                }
+                else
+                {
+                    throw new CustomerException("Phone can not be empty!");
+                }
             }
         }
 
@@ -98,7 +126,14 @@ namespace SFlightBooking
 
             set
             {
-                birthDate = value;
+                if (value != "")
+                {
+                    birthDate = value;
+                }
+                else
+                {
+                    throw new CustomerException("Birth Date can not be empty!");
+                }
             }
         }
 
@@ -111,7 +146,14 @@ namespace SFlightBooking
 
             set
             {
-                gender = value;
+                if (value != "")
+                {
+                    gender = value;
+                }
+                else
+                {
+                    throw new CustomerException("Gender can not be empty!");
+                }
             }
         }
 
@@ -124,7 +166,14 @@ namespace SFlightBooking
 
             set
             {
-                enmergencyName = value;
+                if (value != "")
+                {
+                    enmergencyName = value;
+                }
+                else
+                {
+                    throw new CustomerException("Enmergency Name can not be empty!");
+                }
             }
         }
 
@@ -137,7 +186,14 @@ namespace SFlightBooking
 
             set
             {
-                enmergencyRelationship = value;
+                if (value != "")
+                {
+                    enmergencyRelationship = value;
+                }
+                else
+                {
+                    throw new CustomerException("Enmergency Relationship can not be empty!");
+                }
             }
         }
 
@@ -150,7 +206,14 @@ namespace SFlightBooking
 
             set
             {
-                enmergencyPhone = value;
+                if (value != "")
+                {
+                    enmergencyPhone = value;
+                }
+                else
+                {
+                    throw new CustomerException("Enmergency Phone can not be empty!");
+                }
             }
         }
     }

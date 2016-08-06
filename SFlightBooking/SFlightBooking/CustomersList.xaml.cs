@@ -19,6 +19,10 @@ namespace SFlightBooking
     /// </summary>
     public partial class CustomersList : Window
     {
+
+        List<Customer> customerList;
+        int selectedIndex = -1;
+
         public CustomersList()
         {
             InitializeComponent();
@@ -33,22 +37,43 @@ namespace SFlightBooking
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
-
+            selectedIndex = GetSelectedIndex();
+            if (selectedIndex != -1)
+            {
+                // TODO: Grab data from List<Customer> using index and create a edit form
+                Registration editCustomer = new Registration(new Customer("1", "1", "1", "1", "1", "1", "1", "1", "1"));
+                editCustomer.Show();
+            } else
+            {
+                MessageBox.Show("Please Selecte a customer");
+            }
         }
 
         private void btn_delete_Click(object sender, RoutedEventArgs e)
         {
+            selectedIndex = GetSelectedIndex();
+            if (selectedIndex != -1)
+            {
 
+            }
         }
 
         private void btn_viewRecord_Click(object sender, RoutedEventArgs e)
         {
+            selectedIndex = GetSelectedIndex();
+            if (selectedIndex != -1)
+            {
 
+            }
         }
 
         private void btn_book_Click(object sender, RoutedEventArgs e)
         {
+            selectedIndex = GetSelectedIndex();
+            if (selectedIndex != -1)
+            {
 
+            }
         }
 
         private void listviewLoad()
@@ -114,6 +139,11 @@ namespace SFlightBooking
             // create view
             lv_customerList.View = view;
 
+        }
+
+        public int GetSelectedIndex()
+        {
+            return lv_customerList.SelectedIndex;
         }
     }
 }

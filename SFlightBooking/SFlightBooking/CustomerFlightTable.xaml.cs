@@ -17,8 +17,23 @@ namespace SFlightBooking {
     /// Interaction logic for CustomerFlightTable.xaml
     /// </summary>
     public partial class CustomerFlightTable : Window {
+
+        Customer customerInfo;
+
         public CustomerFlightTable() {
             InitializeComponent();
         }
+
+        public CustomerFlightTable(Customer c)
+        {
+            customerInfo = c;
+        }
+
+        private List<Flight> loadCustomerFlight()
+        {
+            // TODO: user customer info to retrive data from database
+            return new List<Flight>();
+        }
+
     }
 }

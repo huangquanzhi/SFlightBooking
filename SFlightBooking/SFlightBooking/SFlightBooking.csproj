@@ -72,6 +72,7 @@
       <DependentUpon>BookFlight.xaml</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs" />
+    <Compile Include="CustomerException.cs" />
     <Compile Include="CustomerFlightTable.xaml.cs">
       <DependentUpon>CustomerFlightTable.xaml</DependentUpon>
     </Compile>
