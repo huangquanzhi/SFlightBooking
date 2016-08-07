@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SFlightBooking"
         mc:Ignorable="d"
-        Title="Customers List" Height="358.066" Width="753.997" ResizeMode="NoResize">
+        Title="Customers List" Height="376.017" Width="753.997" ResizeMode="NoResize">
     <Grid>
         <ListView x:Name="lv_customerList" HorizontalAlignment="Left" Height="207" Margin="19,10,0,0" VerticalAlignment="Top" Width="707" SelectionChanged="lv_customerList_SelectionChanged">
             <ListView.View>
@@ -16,9 +16,8 @@
         </ListView>
         <Grid Margin="0,217,-0.4,0.4">
             <Button Margin="29,31,567.4,30.6" x:Name="btn_update" Content="Update" Click="btn_update_Click"/>
-            <Button Margin="204,31,382.4,30.6"  x:Name="btn_delete" Content="Delete" Click="btn_delete_Click"/>
-            <Button Margin="386,31,204.4,30.6" x:Name="btn_viewRecord"  Content="View Record" Click="btn_viewRecord_Click"/>
-            <Button Margin="566,31,29.4,30.6" x:Name="btn_book"  Content="Book Flight" Click="btn_book_Click"/>
+            <Button Margin="282,40,304.4,39.6"  x:Name="btn_delete" Content="Delete" Click="btn_delete_Click"/>
+            <Button Margin="563,40,28.4,39.6" x:Name="btn_viewRecord"  Content="View Record" Click="btn_viewRecord_Click"/>
 
         </Grid>
 

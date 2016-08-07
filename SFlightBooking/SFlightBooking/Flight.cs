@@ -11,26 +11,44 @@ namespace SFlightBooking
     public class Flight
     {
         private string flightID;
+        private string airline;
         private string departure;
         private string destination;
-        private string duration;
+        private int duration;
         private string date;
         private string time;
         private int availbleSeats;
+        private int maxSeats;
         private string status;
         private double price;
 
-        public Flight(string flightID, string departure, string destination, string duration, string date, string time, int availbleSeats, string status, double price)
+        public Flight(string flightID, string airline, string departure, string destination, int duration, string date, string time, int availbleSeats, int maxSeats, string status, double price)
         {
             this.flightID = flightID;
+            this.airline = airline;
             this.departure = departure;
             this.destination = destination;
             this.duration = duration;
             this.date = date;
             this.time = time;
             this.availbleSeats = availbleSeats;
+            this.maxSeats = maxSeats;
             this.status = status;
             this.price = price;
+        }
+
+        public Flight(string flightID, string airline, string departure, string destination, int duration, string date, string time, int availbleSeats, int maxSeats, string status)
+        {
+            this.flightID = flightID;
+            this.airline = airline;
+            this.departure = departure;
+            this.destination = destination;
+            this.duration = duration;
+            this.date = date;
+            this.time = time;
+            this.availbleSeats = availbleSeats;
+            this.maxSeats = maxSeats;
+            this.status = status;
         }
 
         public string FlightID
@@ -43,6 +61,19 @@ namespace SFlightBooking
             set
             {
                 flightID = value;
+            }
+        }
+
+        public string Airline
+        {
+            get
+            {
+                return airline;
+            }
+
+            set
+            {
+                airline = value;
             }
         }
 
@@ -72,7 +103,7 @@ namespace SFlightBooking
             }
         }
 
-        public string Duration
+        public int Duration
         {
             get
             {
@@ -121,6 +152,19 @@ namespace SFlightBooking
             set
             {
                 availbleSeats = value;
+            }
+        }
+
+        public int MaxSeats
+        {
+            get
+            {
+                return maxSeats;
+            }
+
+            set
+            {
+                maxSeats = value;
             }
         }
 

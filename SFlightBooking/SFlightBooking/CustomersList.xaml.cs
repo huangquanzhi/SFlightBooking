@@ -39,8 +39,8 @@ namespace SFlightBooking
             selectedIndex = GetSelectedIndex();
             if (selectedIndex != -1)
             {
-                // TODO: Grab data from List<Customer> using index and create a edit form
-                Registration editCustomer = new Registration(new Customer("1", "1", "1", "1", "1", "1", "1", "1", "1"));
+                // Grab data from List<Customer> using index and create a edit form
+                Registration editCustomer = new Registration(customerList[selectedIndex]);
                 editCustomer.Show();
             }
             else
@@ -63,7 +63,10 @@ namespace SFlightBooking
             selectedIndex = GetSelectedIndex();
             if (selectedIndex != -1)
             {
-
+                CustomerFlightTable flightRecord = new CustomerFlightTable(customerList[selectedIndex]);
+            } else
+            {
+                MessageBox.Show("Please Selecte a customer");
             }
         }
 
@@ -78,7 +81,6 @@ namespace SFlightBooking
 
         private void listviewLoad()
         {
-            List<Customer> items;
             Database db = new Database();
             Select select = new Select();
 
@@ -87,10 +89,10 @@ namespace SFlightBooking
 
                 MySqlConnection conn = db.CreateConnection();
                 conn.Open();
-                items = select.CustomerList(db.CreateCommand(conn));
+                customerList = select.CustomerList(db.CreateCommand(conn));
                 conn.Close();
 
-                lv_customerList.ItemsSource = items;
+                lv_customerList.ItemsSource = customerList;
             }
             catch (Exception ex)
             {

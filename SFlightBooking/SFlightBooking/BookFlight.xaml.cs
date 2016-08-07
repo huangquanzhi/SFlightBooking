@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using SFlightBooking.Connection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,20 +51,59 @@ namespace SFlightBooking {
 
         private void customerListLoad()
         {
-            customerList = new List<Customer>();
+            Database db = new Database();
+            Select select = new Select();
 
-            // TODO: Load flights from database base on selected customer
+            try
+            {
 
-            lb_customers.Items.Add("Test");
+                MySqlConnection conn = db.CreateConnection();
+                conn.Open();
+                customerList = select.CustomerList(db.CreateCommand(conn));
+                conn.Close();
+
+                foreach (Customer c in customerList)
+                {
+                    lb_customers.Items.Add(c.FirstName + " " + c.LastName);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Customer List error: " + ex.Message.ToString());
+            }
+
+
         }
 
         private void listviewLoad()
         {
-            flightList= new List<Flight>();
+            Database db = new Database();
+            Select select = new Select();
+            List<Flight> temp = new List<Flight>();
 
-            // TODO: Load flights from database base on selected customer
+            try
+            {
 
-            lv_flights.ItemsSource = flightList;
+                MySqlConnection conn = db.CreateConnection();
+                conn.Open();
+                flightList = select.FlightList(db.CreateCommand(conn));
+                conn.Close();
+
+                foreach(Flight f in flightList)
+                {
+                    if(f.Status == "Availble")
+                    {
+                        temp.Add(f);
+                    }
+                }
+
+                lv_flights.ItemsSource = temp;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Flight List error: " + ex.Message.ToString());
+            }
+
         }
 
         private void initListView()
@@ -109,6 +150,11 @@ namespace SFlightBooking {
         private void btn_close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_viewFlight_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

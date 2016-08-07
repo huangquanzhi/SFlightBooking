@@ -31,6 +31,7 @@ namespace SFlightBooking {
         {
             customerInfo = c;
             initListView();
+            loadCustomerFlight();
         }
 
         private List<Flight> loadCustomerFlight()

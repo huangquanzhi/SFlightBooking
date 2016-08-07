@@ -17,8 +17,19 @@ namespace SFlightBooking {
     /// Interaction logic for FlightInfo.xaml
     /// </summary>
     public partial class FlightInfo : Window {
+
+        private Flight flightInfo;
+
         public FlightInfo() {
             InitializeComponent();
         }
+
+        public FlightInfo(Flight f)
+        {
+            flightInfo = f;
+
+
+        }
+
     }
 }

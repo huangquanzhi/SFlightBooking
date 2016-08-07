@@ -49,5 +49,43 @@ namespace SFlightBooking.Connection
             }
         }
 
+        public List<Flight> FlightList(MySqlCommand cmd)
+        {
+
+            List<Flight> list = new List<Flight>();
+
+            try
+            {
+                cmd.CommandText = "SELECT * FROM Flight";
+
+                using (MySqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+
+                        // add customer to list
+                        list.Add(new Flight(
+                             (string)rd["FlightID"],
+                            (string)rd["Airline"],
+                            (string)rd["Departure"],
+                            (string)rd["Destination"],
+                            (rd.GetInt32(0)),
+                            (string)rd["flightDate"],
+                            (string)rd["flightTime"],
+                            rd.GetInt32(rd.GetOrdinal("availbleSeats")),
+                            rd.GetInt32(rd.GetOrdinal("maxSeats")),
+                            (string)rd["status"])
+                            );
+                    }
+                }
+                // return customer list
+                return list;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
     }
 }

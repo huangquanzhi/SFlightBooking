@@ -5,22 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SFlightBooking"
         mc:Ignorable="d"
-        Title="BookFlight" Height="348.293" Width="601.951">
+        Title="BookFlight" Height="348.293" Width="698.536">
     <Grid>
-        <ListView x:Name="lv_flights" HorizontalAlignment="Left" Height="205" Margin="19,27,0,0" VerticalAlignment="Top" Width="391">
+        <ListView x:Name="lv_flights" HorizontalAlignment="Left" Height="205" Margin="19,27,0,0" VerticalAlignment="Top" Width="430">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <GroupBox Margin="426,10,10,85" Header="Customers">
-            <ListBox x:Name="lb_customers" HorizontalAlignment="Left" Height="190" Margin="0,0,0,-10" VerticalAlignment="Top" Width="148">
-            </ListBox>
+        <GroupBox Margin="462,27,10,85" Header="Customers">
+            <ListBox x:Name="lb_customers" HorizontalAlignment="Left" Height="165" VerticalAlignment="Top" Width="200"/>
         </GroupBox>
 
-        <Button x:Name="btn_bookFlight" Content="Book Flight" HorizontalAlignment="Left" Margin="19,259,0,0" VerticalAlignment="Top" Width="257" Click="btn_bookFlight_Click"/>
-        <Button x:Name="btn_close" Content="Close" HorizontalAlignment="Left" Margin="327,259,0,0" VerticalAlignment="Top" Width="257" Click="btn_close_Click"/>
+        <Button x:Name="btn_bookFlight" Content="Book Flight" HorizontalAlignment="Left" Margin="19,259,0,0" VerticalAlignment="Top" Width="199" Click="btn_bookFlight_Click"/>
+        <Button x:Name="btn_close" Content="Close" HorizontalAlignment="Left" Margin="462,259,0,0" VerticalAlignment="Top" Width="219" Click="btn_close_Click"/>
+        <Button x:Name="btn_viewFlight" Content="View Flight" HorizontalAlignment="Left" Margin="251,259,0,0" VerticalAlignment="Top" Width="198" Click="btn_viewFlight_Click"/>
 
     </Grid>
 </Window>
