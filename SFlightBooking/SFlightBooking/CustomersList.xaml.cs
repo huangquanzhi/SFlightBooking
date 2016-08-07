@@ -31,6 +31,18 @@ namespace SFlightBooking
             listviewLoad();
 
 
+          //  DatabaseConnection dConn = new DatabaseConnection();
+//
+         //   try
+         //   {
+         //       SqlConnection conn = dConn.CreateConnection();
+         //       conn.Open();
+         //       MessageBox.Show("Connected");
+//}
+         //   catch (Exception ex)
+          //  {
+          //      MessageBox.Show("Database: " + ex.Message.ToString());
+          //  }
         }
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
