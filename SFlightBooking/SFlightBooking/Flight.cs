@@ -18,8 +18,9 @@ namespace SFlightBooking
         private string time;
         private int availbleSeats;
         private string status;
+        private double price;
 
-        public Flight(string flightID, string departure, string destination, string duration, string date, string time, int availbleSeats, string status)
+        public Flight(string flightID, string departure, string destination, string duration, string date, string time, int availbleSeats, string status, double price)
         {
             this.flightID = flightID;
             this.departure = departure;
@@ -29,6 +30,7 @@ namespace SFlightBooking
             this.time = time;
             this.availbleSeats = availbleSeats;
             this.status = status;
+            this.price = price;
         }
 
         public string FlightID
@@ -132,6 +134,19 @@ namespace SFlightBooking
             set
             {
                 status = value;
+            }
+        }
+
+        public double Price
+        {
+            get
+            {
+                return price;
+            }
+
+            set
+            {
+                price = value;
             }
         }
     }
