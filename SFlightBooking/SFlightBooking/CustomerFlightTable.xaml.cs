@@ -89,7 +89,6 @@ namespace SFlightBooking {
             col4.Width = 100;
             view.Columns.Add(col4);
 
-
             GridViewColumn col5 = new GridViewColumn();
             col5.Header = "Time";
             col5.DisplayMemberBinding = new Binding("Time");
