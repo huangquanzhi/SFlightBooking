@@ -14,18 +14,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace SFlightBooking {
+namespace SFlightBooking
+{
     /// <summary>
     /// Interaction logic for BookFlight.xaml
     /// </summary>
-    public partial class BookFlight : Window {
+    public partial class BookFlight : Window
+    {
 
         List<Customer> customerList;
         List<Flight> flightList;
         int flightIndex = -1;
         int customerIndex = -1;
 
-        public BookFlight() {
+        public BookFlight()
+        {
             InitializeComponent();
 
             // create and load data
@@ -39,10 +42,11 @@ namespace SFlightBooking {
             flightIndex = SelectedFlightIndex();
             customerIndex = SelectedCustomerIndex();
 
-            if(flightIndex != -1 && customerIndex != -1)
+            if (flightIndex != -1 && customerIndex != -1)
             {
                 // Flight and Customer Selected
-            } else
+            }
+            else
             {
                 // Not selected
                 MessageBox.Show("Please select both flight and customer to book a flight!");
@@ -89,9 +93,9 @@ namespace SFlightBooking {
                 flightList = select.FlightList(db.CreateCommand(conn));
                 conn.Close();
 
-                foreach(Flight f in flightList)
+                foreach (Flight f in flightList)
                 {
-                    if(f.Status == "Availble")
+                    if (f.Status == "Availble")
                     {
                         temp.Add(f);
                     }
@@ -154,7 +158,53 @@ namespace SFlightBooking {
 
         private void btn_viewFlight_Click(object sender, RoutedEventArgs e)
         {
+            flightIndex = SelectedFlightIndex();
+            if (flightIndex > -1)
+            {
+                FlightInfo fi = new FlightInfo(flightList[flightIndex]);
+                fi.Show();
+            }
 
         }
+
+        private void lb_customers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            EnableBookFlight();
+        }
+
+        private void lv_flights_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            EnableBookFlight();
+            EnableViewFlight();
+        }
+
+        private void EnableViewFlight()
+        {
+            flightIndex = SelectedFlightIndex();
+            // both flight and customer selected
+            if (flightIndex != -1)
+            {
+                btn_viewFlight.IsEnabled = true;
+            }
+            else
+            {
+                btn_viewFlight.IsEnabled = false;
+            }
+        }
+
+        private void EnableBookFlight()
+        {
+            flightIndex = SelectedFlightIndex();
+            customerIndex = SelectedCustomerIndex();
+            // both flight and customer selected
+            if (flightIndex != -1 && customerIndex != -1)
+            {
+                btn_bookFlight.IsEnabled = true;
+            } else
+            {
+                btn_bookFlight.IsEnabled = false;
+            }
+        }
+
     }
 }

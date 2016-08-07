@@ -13,16 +13,32 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-    Title="FlightInfo" Height="381.952" Width="567.073" ResizeMode="NoResize">
+    Title="FlightInfo" Height="484.662" Width="567.073" ResizeMode="NoResize">
     <Grid>
-        <TextBox x:Name="tb_location" HorizontalAlignment="Left" Height="23" Margin="60,48,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Location" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tb_destination" HorizontalAlignment="Left" Height="23" Margin="209,48,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Destination"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tb_duration" HorizontalAlignment="Left" Height="23" Margin="372,48,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Duration"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tb_capacity" HorizontalAlignment="Left" Height="23" Margin="372,101,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Capacity" VerticalAlignment="Top" Width="120"/>
-        <materialDesign:TimePicker x:Name="tp_time" HorizontalAlignment="Left" Margin="209,101,0,0" VerticalAlignment="Top" Width="120"/>
-        <DatePicker x:Name="dp_date" HorizontalAlignment="Left" Margin="60,101,0,0" VerticalAlignment="Top" Width="120"/>
-        <GroupBox x:Name="groupBox" Header="Status" HorizontalAlignment="Left" Margin="60,215,0,0" VerticalAlignment="Top" Height="103" Width="460"/>
-        <TextBox x:Name="tb_airline" HorizontalAlignment="Left" Height="23" Margin="60,165,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Airline" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_location" HorizontalAlignment="Left" Height="23" Margin="133,48,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Location" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="tb_destination" HorizontalAlignment="Left" Height="23" Margin="372,48,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Destination"  VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="tb_duration" HorizontalAlignment="Left" Height="23" Margin="372,168,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Duration"  VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="tb_capacity" HorizontalAlignment="Left" Height="23" Margin="372,235,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Capacity" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <materialDesign:TimePicker x:Name="tp_time" HorizontalAlignment="Left" Margin="372,101,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <DatePicker x:Name="dp_date" HorizontalAlignment="Left" Margin="133,101,0,0" VerticalAlignment="Top" Width="120" IsTodayHighlighted="True" IsEnabled="False"/>
+        <GroupBox x:Name="groupBox" Header="Status" HorizontalAlignment="Left" Margin="60,283,0,0" VerticalAlignment="Top" Height="103" Width="460">
+            <Grid>
+                <RadioButton x:Name="rb_available" Content="Available" Margin="30,21,329,0" VerticalAlignment="Top" IsEnabled="False"/>
+                <RadioButton x:Name="rb_progress" Content="In Progress" Margin="169,21,142,0" VerticalAlignment="Top" IsEnabled="False"/>
+                <RadioButton x:Name="rb_completed" Content="Completed" Margin="309,21,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+            </Grid>
+        </GroupBox>
+        <TextBox x:Name="tb_airline" HorizontalAlignment="Left" Height="23" Margin="133,168,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Airline" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="tb_available" HorizontalAlignment="Left" Height="23" Margin="133,235,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Available" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <Label x:Name="label" Content="Available: " HorizontalAlignment="Left" Margin="60,235,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="Max Capacity: " HorizontalAlignment="Left" Margin="281,235,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="Departure: " HorizontalAlignment="Left" Margin="60,48,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy2" Content="Date: " HorizontalAlignment="Left" Margin="60,101,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy3" Content="Airline: " HorizontalAlignment="Left" Margin="60,165,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy4" Content="Destination: " HorizontalAlignment="Left" Margin="292,48,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy5" Content="Time: " HorizontalAlignment="Left" Margin="299,100,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy6" Content="Duration: " HorizontalAlignment="Left" Margin="299,167,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_close" Content="Close" HorizontalAlignment="Left" Margin="60,401,0,0" VerticalAlignment="Top" Width="460" Click="btn_close_Click"/>
 
     </Grid>
 </Window>

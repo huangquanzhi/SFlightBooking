@@ -69,7 +69,7 @@ namespace SFlightBooking.Connection
                             (string)rd["Airline"],
                             (string)rd["Departure"],
                             (string)rd["Destination"],
-                            (rd.GetInt32(0)),
+                            rd.GetInt32(rd.GetOrdinal("duration")),
                             (string)rd["flightDate"],
                             (string)rd["flightTime"],
                             rd.GetInt32(rd.GetOrdinal("availbleSeats")),
