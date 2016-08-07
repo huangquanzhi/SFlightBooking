@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Customers List" Height="358.066" Width="753.997" ResizeMode="NoResize">
     <Grid>
-        <ListView x:Name="lv_customerList" HorizontalAlignment="Left" Height="207" Margin="19,10,0,0" VerticalAlignment="Top" Width="707">
+        <ListView x:Name="lv_customerList" HorizontalAlignment="Left" Height="207" Margin="19,10,0,0" VerticalAlignment="Top" Width="707" SelectionChanged="lv_customerList_SelectionChanged">
             <ListView.View>
                 <GridView>
   

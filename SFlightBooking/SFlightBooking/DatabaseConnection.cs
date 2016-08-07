@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace SFlightBooking
 {
@@ -26,26 +27,28 @@ namespace SFlightBooking
             userName = "sheridan";
             password = "password";
 
-            connectionString = "Data Source=" + address +
-                ";Initial Catalog=" + catalog +
-                ";Integrated Security=" + security +
-                ";User Id=" + userName +
-                ";Password=" + password + ";";
+            
+            connectionString = "server=" + address +
+                ";datbase=" + catalog +
+                ";uid=" + userName +
+                ";pwd=" + password + ";";
         }
 
         public DatabaseConnection(string connectionString)
         {
             this.connectionString = connectionString;
+
+
         }
 
-        public SqlConnection CreateConnection()
+        public MySqlConnection CreateConnection()
         {
-            return new SqlConnection(connectionString);
+            return new MySqlConnection(connectionString);
         }
 
-        public SqlCommand CreateCommand(SqlConnection conn)
+        public MySqlCommand CreateCommand(MySqlConnection conn)
         {
-            SqlCommand cmd = null;
+            MySqlCommand cmd = null;
 
             try
             {
@@ -59,7 +62,7 @@ namespace SFlightBooking
 
         }
 
-        public void CloseConnection(SqlConnection conn)
+        public void CloseConnection(MySqlConnection conn)
         {
             try
             {

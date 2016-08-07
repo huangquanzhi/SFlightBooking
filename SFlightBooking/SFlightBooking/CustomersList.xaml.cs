@@ -155,5 +155,10 @@ namespace SFlightBooking
         {
             return lv_customerList.SelectedIndex;
         }
+
+        private void lv_customerList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SFlightBooking.Connection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,35 +50,35 @@ namespace SFlightBooking
                 MessageBox.Show("Error init edit form: " + e.Message.ToString());
             }
         }
+        Insert dataInsert = new Insert();
 
         private void btn_register_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                // customer object
-                Customer reg = new Customer()
-                {
-                    FirstName = tb_firstName.Text,
-                    LastName = tb_lastName.Text,
-                    Address = tb_address.Text,
-                    Phone = tb_phoneNumber.Text,
-                    BirthDate = dp_birth.Text,
-                    Gender = "",
-                    EnmergencyName = tb_enName.Text,
-                    EnmergencyRelationship = tb_enRelation.Text,
-                    EnmergencyPhone = tb_enPhone.Text
-                };
+                string gender = (bool)rb_male.IsChecked ? "Male" : "Female";
+                Customer c = new Customer(tb_firstName.Text, tb_lastName.Text, tb_address.Text, tb_phoneNumber.Text, dp_birth.Text, gender, tb_enName.Text, tb_enRelation.Text, tb_enPhone.Text);
 
-
-            }
-            catch (CustomerException cx)
-            {
-                MessageBox.Show("Field required: " + cx.Message.ToString());
+                dataInsert.AddCustomer(c);
+                clear();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             }
+        }
+
+        private void clear()
+        {
+            tb_firstName.Text = "";
+            tb_lastName.Text = "";
+            tb_address.Text = "";
+            tb_phoneNumber.Text = "";
+            dp_birth.Text = "";
+            //TODO: radio reset
+            tb_enName.Text = "";
+            tb_enRelation.Text = "";
+            tb_enPhone.Text = "";
         }
 
         private void btn_clear_Click(object sender, RoutedEventArgs e)
