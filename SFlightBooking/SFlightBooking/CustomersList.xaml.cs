@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using SFlightBooking.Connection;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -30,19 +32,6 @@ namespace SFlightBooking
             initListView();
             listviewLoad();
 
-
-          //  DatabaseConnection dConn = new DatabaseConnection();
-//
-         //   try
-         //   {
-         //       SqlConnection conn = dConn.CreateConnection();
-         //       conn.Open();
-         //       MessageBox.Show("Connected");
-//}
-         //   catch (Exception ex)
-          //  {
-          //      MessageBox.Show("Database: " + ex.Message.ToString());
-          //  }
         }
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
@@ -53,7 +42,8 @@ namespace SFlightBooking
                 // TODO: Grab data from List<Customer> using index and create a edit form
                 Registration editCustomer = new Registration(new Customer("1", "1", "1", "1", "1", "1", "1", "1", "1"));
                 editCustomer.Show();
-            } else
+            }
+            else
             {
                 MessageBox.Show("Please Selecte a customer");
             }
@@ -88,21 +78,24 @@ namespace SFlightBooking
 
         private void listviewLoad()
         {
-            List<Customer> items = new List<Customer>();
-            items.Add(new Customer()
+            List<Customer> items;
+            Database db = new Database();
+            Select select = new Select();
+
+            try
             {
-                FirstName = "First",
-                LastName = "Second",
-                Address = "Address",
-                Phone = "Phone",
-                BirthDate = "Birth",
-                Gender = "Male",
-                EnmergencyName = "En",
-                EnmergencyRelationship = "Re",
-                EnmergencyPhone = "P"
+
+                MySqlConnection conn = db.CreateConnection();
+                conn.Open();
+                items = select.CustomerList(db.CreateCommand(conn));
+                conn.Close();
+
+                lv_customerList.ItemsSource = items;
             }
-                );
-            lv_customerList.ItemsSource = items;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Customer List error: " + ex.Message.ToString());
+            }
         }
 
         private void initListView()

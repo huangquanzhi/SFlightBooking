@@ -30,7 +30,7 @@
                 <DatePicker x:Name="dp_birth" materialDesign:HintAssist.Hint="Birth Date" HorizontalAlignment="Left" Margin="23,167,0,0" VerticalAlignment="Top" Width="191"/>
                 <GroupBox Margin="241,139,10,28" Header="Gender">
                     <Grid>
-                        <RadioButton x:Name="rb_male" Margin="0,0,74.8,0.2" Content="Male"/>
+                        <RadioButton x:Name="rb_male" Margin="0,0,74.8,0.2" Content="Male" IsChecked="True"/>
                         <RadioButton x:Name="rb_female" Margin="107,0,-0.2,0.2" Content="Female"/>
                     </Grid>
                 </GroupBox>

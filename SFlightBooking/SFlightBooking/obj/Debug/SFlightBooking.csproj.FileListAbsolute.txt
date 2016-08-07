@@ -84,3 +84,4 @@ C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\o
 C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\obj\Debug\SFlightBooking.csproj.GenerateResource.Cache
 C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\bin\Debug\MySql.Data.dll
 C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\bin\Debug\MySql.Data.xml
+C:\Users\Jackie\Desktop\Github\SFlightBooking\SFlightBooking\SFlightBooking\bin\Debug\MySql.Data.dll

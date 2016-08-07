@@ -13,40 +13,15 @@ namespace SFlightBooking.Connection
 {
     class Insert
     {
-        FlightBookingDataSet fbds;
-        string conString = "server=107.180.3.101;database=SheridanProject;uid=sheridan;pwd=password;";
-        MySqlConnection con;
-        MySqlCommand cmd;
-        int result;
 
-        private bool Connect()
+        public bool AddCustomer(MySqlCommand cmd, Customer c)
         {
+            // Uid is auto-increment
             try
             {
-                con = new MySqlConnection(conString);
-                con.Open();
-                return true; //If connection established
-            }
-            catch
-            {
-                Console.Beep();
-                Console.Write("Could not connect to: " + conString);
-                return false;
-            }
-
-        }
-
-        
-
-        public void AddCustomer(Customer c)
-        {
-            int id = GetLastUserId("Customer");
-
-            if (Connect()){
-                MessageBox.Show("CONNECTED");
-                cmd = con.CreateCommand();
-                cmd.CommandText = "INSERT INTO Customer VALUES(@id, @fName, @lName, @address, @phone, @gender, @birthDate, @enName, @enRelation, @enPhone)";
-                cmd.Parameters.AddWithValue("@id", id + 1);
+                // create command
+                cmd.CommandText = "INSERT INTO Customer VALUES(@uid,@fName, @lName, @address, @phone, @gender, @birthDate, @enName, @enRelation, @enPhone)";
+                cmd.Parameters.AddWithValue("@uid", null);
                 cmd.Parameters.AddWithValue("@fName", c.FirstName);
                 cmd.Parameters.AddWithValue("@lName", c.LastName);
                 cmd.Parameters.AddWithValue("@address", c.BirthDate);
@@ -57,16 +32,19 @@ namespace SFlightBooking.Connection
                 cmd.Parameters.AddWithValue("@enRelation", c.EnmergencyRelationship);
                 cmd.Parameters.AddWithValue("@enPhone", c.EnmergencyPhone);
 
-                if(0 < cmd.ExecuteNonQuery())
+                if (0 < cmd.ExecuteNonQuery())
                 {
-                    MessageBox.Show("Successfully added!");
+                    return true;
                 }
-                con.Close();
+                else
+                {
+                    return false;
+                }
 
             }
-            else
+            catch
             {
-                MessageBox.Show("CONNECTION FAILED");
+                throw;
             }
             /*
             fbds = new FlightBookingDataSet();
@@ -90,27 +68,6 @@ namespace SFlightBooking.Connection
             */
 
 
-
-        }
-        public int GetLastUserId(string table)
-        {
-            if (Connect())
-            {
-                
-              
-                cmd = con.CreateCommand();
-                cmd.CommandText = "SELECT uid FROM " + table + " ORDER BY uid DESC LIMIT 1";
-
-                MySqlDataReader read = cmd.ExecuteReader();
-
-                if (read.Read())
-                {
-                    return read.GetInt32(0);
-                }
-                con.Close();
-            }
-
-            return 0;
 
         }
 

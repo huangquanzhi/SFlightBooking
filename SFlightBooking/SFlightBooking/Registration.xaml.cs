@@ -1,4 +1,5 @@
-﻿using SFlightBooking.Connection;
+﻿using MySql.Data.MySqlClient;
+using SFlightBooking.Connection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,14 @@ namespace SFlightBooking
     public partial class Registration : Window
     {
 
+        Customer editCustomer;
+        Insert dataInsert;
+
         public Registration()
         {
             InitializeComponent();
+            editCustomer = null;
+            dataInsert = new Insert();
         }
 
         public Registration(Customer c)
@@ -35,6 +41,9 @@ namespace SFlightBooking
             // set customer data in form
             try
             {
+                // store editing customer
+                editCustomer = c;
+
                 tb_firstName.Text = c.FirstName;
                 tb_lastName.Text = c.LastName;
                 tb_address.Text = c.Address;
@@ -50,17 +59,69 @@ namespace SFlightBooking
                 MessageBox.Show("Error init edit form: " + e.Message.ToString());
             }
         }
-        Insert dataInsert = new Insert();
+
 
         private void btn_register_Click(object sender, RoutedEventArgs e)
         {
             try
             {
+                // gender
                 string gender = (bool)rb_male.IsChecked ? "Male" : "Female";
-                Customer c = new Customer(tb_firstName.Text, tb_lastName.Text, tb_address.Text, tb_phoneNumber.Text, dp_birth.Text, gender, tb_enName.Text, tb_enRelation.Text, tb_enPhone.Text);
 
-                dataInsert.AddCustomer(c);
-                clear();
+                // Register as new customer
+                if (editCustomer == null)
+                {
+                    // create new database insert
+                    Database db = new Database();
+                    Insert newCustomer = new Insert();
+                    MySqlConnection conn = db.CreateConnection();
+                    bool status = false;
+                    // open connection
+                    try
+                    {
+                        // customer object, it uses SETTER which will throw exception if empty
+
+                        Customer reg = new Customer()
+                        {
+                            FirstName = tb_firstName.Text,
+                            LastName = tb_lastName.Text,
+                            Address = tb_address.Text,
+                            Phone = tb_phoneNumber.Text,
+                            BirthDate = dp_birth.Text,
+                            Gender = gender,
+                            EnmergencyName = tb_enName.Text,
+                            EnmergencyRelationship = tb_enRelation.Text,
+                            EnmergencyPhone = tb_enPhone.Text
+                        };
+                        conn.Open();
+
+                        status = newCustomer.AddCustomer(db.CreateCommand(conn), reg);
+
+                        conn.Close();
+                        if(status)
+                        {
+                            MessageBox.Show("Customer Added");
+                            clear();
+                        } else
+                        {
+                            MessageBox.Show("Fail to add customer");
+                        }
+
+                    } catch (CustomerException c)
+                    {
+                        MessageBox.Show("Required: " + c.Message.ToString());
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Database: " + ex.Message.ToString());
+                    }
+
+                    // Edit the current customer in database
+                }
+                else
+                {
+                    // TODO: create update object and update the current customer in database with the filled information
+                }
             }
             catch (Exception ex)
             {
@@ -75,7 +136,7 @@ namespace SFlightBooking
             tb_address.Text = "";
             tb_phoneNumber.Text = "";
             dp_birth.Text = "";
-            //TODO: radio reset
+            rb_male.IsChecked = true;
             tb_enName.Text = "";
             tb_enRelation.Text = "";
             tb_enPhone.Text = "";
@@ -83,15 +144,7 @@ namespace SFlightBooking
 
         private void btn_clear_Click(object sender, RoutedEventArgs e)
         {
-            tb_firstName.Text = "";
-            tb_lastName.Text = "";
-            tb_address.Text = "";
-            tb_phoneNumber.Text = "";
-            dp_birth.Text = "";
-            //TODO: radio reset
-            tb_enName.Text = "";
-            tb_enRelation.Text = "";
-            tb_enPhone.Text = "";
+            clear();
         }
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)

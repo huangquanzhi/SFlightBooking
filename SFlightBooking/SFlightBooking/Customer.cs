@@ -8,16 +8,16 @@ namespace SFlightBooking
 {
     public class Customer
     {
-
-        string firstName;
-        string lastName;
-        string address;
-        string phone;
-        string birthDate;
-        string gender;
-        string enmergencyName;
-        string enmergencyRelationship;
-        string enmergencyPhone;
+        private int uid;
+        private string firstName;
+        private string lastName;
+        private string address;
+        private string phone;
+        private string birthDate;
+        private string gender;
+        private string enmergencyName;
+        private string enmergencyRelationship;
+        private string enmergencyPhone;
 
         public Customer()
         {
@@ -26,6 +26,20 @@ namespace SFlightBooking
 
         public Customer(string firstName, string lastName, string address, string phone, string birthDate, string gender, string enmergencyName, string enmergencyRelationship, string enmergencyPhone)
         {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.address = address;
+            this.phone = phone;
+            this.birthDate = birthDate;
+            this.gender = gender;
+            this.enmergencyName = enmergencyName;
+            this.enmergencyRelationship = enmergencyRelationship;
+            this.enmergencyPhone = enmergencyPhone;
+        }
+
+        public Customer(int uid, string firstName, string lastName, string address, string phone, string birthDate, string gender, string enmergencyName, string enmergencyRelationship, string enmergencyPhone)
+        {
+            this.uid = uid;
             this.firstName = firstName;
             this.lastName = lastName;
             this.address = address;
@@ -214,6 +228,19 @@ namespace SFlightBooking
                 {
                     throw new CustomerException("Enmergency Phone can not be empty!");
                 }
+            }
+        }
+
+        public int Uid
+        {
+            get
+            {
+                return uid;
+            }
+
+            set
+            {
+                uid = value;
             }
         }
     }

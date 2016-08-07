@@ -46,7 +46,7 @@
       <HintPath>..\packages\MaterialDesignThemes.2.0.0.638\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
@@ -73,8 +73,10 @@
     <Compile Include="BookFlight.xaml.cs">
       <DependentUpon>BookFlight.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Connection\Database.cs" />
     <Compile Include="Connection\Insert.cs" />
     <Compile Include="Connection\Select.cs" />
+    <Compile Include="Connection\Update.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerException.cs" />
     <Compile Include="CustomerFlightTable.xaml.cs">
@@ -83,7 +85,6 @@
     <Compile Include="CustomersList.xaml.cs">
       <DependentUpon>CustomersList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Flight.cs" />
     <Compile Include="FlightBookingDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

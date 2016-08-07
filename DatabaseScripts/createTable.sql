@@ -3,13 +3,13 @@ DROP TABLE Flight;
 DROP TABLE Customer;
 
 CREATE TABLE Customer(
-	uid INT NOT NULL AUTO_INCREMENT,
+	uid INT AUTO_INCREMENT,
 	FirstName VARCHAR(255) NOT NULL,
 	LastName VARCHAR(255) NOT NULL,
 	Address VARCHAR(255) NOT NULL,
 	Phone VARCHAR(15) NOT NULL,
 	Gender VARCHAR(10) NOT NULL,
-	BirthDate DATE NOT NULL,
+	BirthDate VARCHAR(100) NOT NULL,
 	EnName VARCHAR(255) NOT NULL,
 	EnRelationship VARCHAR(255) NOT NULL,
 	EnPhone VARCHAR(15) NOT NULL,
@@ -22,8 +22,8 @@ CREATE TABLE Flight(
 	Departure VARCHAR(255) NOT NULL,
 	Destination VARCHAR(255) NOT NULL,
 	Duration INT NOT NULL,
-	flightDate DATE NOT NULL,
-	flightTime TIME NOT NULL,
+	flightDate VARCHAR(100) NOT NULL,
+	flightTime VARCHAR(100) NOT NULL,
 	availbleSeats INT CHECK(availbleSeats < maxSeats),
 	maxSeats INT CHECK(maxSeats > 0),
 	status VARCHAR(10) NOT NULL,
