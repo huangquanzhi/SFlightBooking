@@ -80,6 +80,7 @@
     <Compile Include="CustomersList.xaml.cs">
       <DependentUpon>CustomersList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Flight.cs" />
     <Compile Include="FlightInfo.xaml.cs">
       <DependentUpon>FlightInfo.xaml</DependentUpon>

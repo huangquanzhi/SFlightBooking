@@ -20,7 +20,7 @@
         </GroupBox>
 
         <Button x:Name="btn_bookFlight" Content="Book Flight" HorizontalAlignment="Left" Margin="19,259,0,0" VerticalAlignment="Top" Width="257" Click="btn_bookFlight_Click"/>
-        <Button x:Name="btn_close" Content="Close" HorizontalAlignment="Left" Margin="327,259,0,0" VerticalAlignment="Top" Width="257"/>
+        <Button x:Name="btn_close" Content="Close" HorizontalAlignment="Left" Margin="327,259,0,0" VerticalAlignment="Top" Width="257" Click="btn_close_Click"/>
 
     </Grid>
 </Window>

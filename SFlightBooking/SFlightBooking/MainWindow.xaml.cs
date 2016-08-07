@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace SFlightBooking {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
+
         }
 
         private void btn_registerForm_Click(object sender, RoutedEventArgs e) {

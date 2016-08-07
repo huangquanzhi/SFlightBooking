@@ -11,11 +11,26 @@ namespace SFlightBooking
     {
 
         private string connectionString;
+        private string address;
+        private string catalog;
+        private string security;
+        private string userName;
+        private string password;
 
         public DatabaseConnection()
         {
-            connectionString = "Connection";
 
+            address = "107.180.3.101";
+            catalog = "SheridanProject";
+            security = "SSPI";
+            userName = "sheridan";
+            password = "password";
+
+            connectionString = "Data Source=" + address +
+                ";Initial Catalog=" + catalog +
+                ";Integrated Security=" + security +
+                ";User Id=" + userName +
+                ";Password=" + password + ";";
         }
 
         public DatabaseConnection(string connectionString)
@@ -30,13 +45,31 @@ namespace SFlightBooking
 
         public SqlCommand CreateCommand(SqlConnection conn)
         {
-            return conn.CreateCommand();
+            SqlCommand cmd = null;
+
+            try
+            {
+                cmd = conn.CreateCommand();
+                return cmd;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
         }
 
         public void CloseConnection(SqlConnection conn)
         {
-            conn.Close();
-        } 
+            try
+            {
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
 
     }
 }
