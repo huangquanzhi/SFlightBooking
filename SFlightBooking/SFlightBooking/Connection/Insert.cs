@@ -46,29 +46,32 @@ namespace SFlightBooking.Connection
             {
                 throw;
             }
-            /*
-            fbds = new FlightBookingDataSet();
 
-            FlightBookingDataSetTableAdapters.CustomerTableAdapter cta = new FlightBookingDataSetTableAdapters.CustomerTableAdapter();
-            cta.Fill(fbds.Customer);
+        }
 
-            DataRow row = fbds.Tables["Customer"].NewRow();
-            row["fName"] = c.FirstName;
-            row["lName"] = c.LastName;
-            row["address"] = c.Address;
-            row["birthday"] = c.BirthDate;
-            row["gender"] = c.Gender;
-            row["phone"] = c.Phone;
-            row["eName"] = c.EnmergencyName;
-            row["eRelation"] = c.EnmergencyRelationship;
-            row["ePhone"] = c.EnmergencyPhone;
+        public bool BookFlight(MySqlCommand cmd, Customer c, Flight f)
+        {
+            try
+            {
+                // create command
+                cmd.CommandText = "INSERT INTO Ticket VALUES(@uid,@flightID)";
+                cmd.Parameters.AddWithValue("@uid", c.Uid);
+                cmd.Parameters.AddWithValue("@flightID", f.FlightID);
 
-            fbds.Tables["Customer"].Rows.Add(row);
-            cta.Update(fbds.Customer);
-            */
+                if (0 < cmd.ExecuteNonQuery())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
-
-
+            }
+            catch
+            {
+                throw;
+            }
         }
 
     }

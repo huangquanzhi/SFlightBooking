@@ -39,17 +39,43 @@ namespace SFlightBooking
 
         private void btn_bookFlight_Click(object sender, RoutedEventArgs e)
         {
-            flightIndex = SelectedFlightIndex();
-            customerIndex = SelectedCustomerIndex();
 
-            if (flightIndex != -1 && customerIndex != -1)
+            try
             {
-                // Flight and Customer Selected
+                Database db = new Database();
+                Insert insert = new Insert();
+
+                flightIndex = SelectedFlightIndex();
+                customerIndex = SelectedCustomerIndex();
+
+                // open connection
+                MySqlConnection conn = db.CreateConnection();
+                conn.Open();
+
+                if (flightIndex != -1 && customerIndex != -1)
+                {
+                    // booking flight
+                    if (insert.BookFlight(db.CreateCommand(conn), customerList[customerIndex], flightList[flightIndex]))
+                    {
+                        MessageBox.Show("Flight booked!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to book flight!");
+                    }
+
+                    // close connection
+                    conn.Close();
+                }
+                else
+                {
+                    // Not selected
+                    MessageBox.Show("Please select both flight and customer to book a flight!");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                // Not selected
-                MessageBox.Show("Please select both flight and customer to book a flight!");
+                MessageBox.Show("Book flight error: " + ex.Message.ToString());
             }
         }
 
@@ -60,12 +86,13 @@ namespace SFlightBooking
 
             try
             {
-
+                // load customer list from database
                 MySqlConnection conn = db.CreateConnection();
                 conn.Open();
                 customerList = select.CustomerList(db.CreateCommand(conn));
                 conn.Close();
 
+                // adding customers to listbox
                 foreach (Customer c in customerList)
                 {
                     lb_customers.Items.Add(c.FirstName + " " + c.LastName);
@@ -88,6 +115,7 @@ namespace SFlightBooking
             try
             {
 
+                // open connection to retriev flights from database
                 MySqlConnection conn = db.CreateConnection();
                 conn.Open();
                 flightList = select.FlightList(db.CreateCommand(conn));
@@ -95,7 +123,9 @@ namespace SFlightBooking
 
                 foreach (Flight f in flightList)
                 {
-                    if (f.Status == "Availble")
+                    // only display available flights
+                    MessageBox.Show(f.Status);
+                    if (f.Status == "Available")
                     {
                         temp.Add(f);
                     }
@@ -133,8 +163,8 @@ namespace SFlightBooking
             view.Columns.Add(col3);
 
             GridViewColumn col4 = new GridViewColumn();
-            col4.Header = "AvailbleSeats";
-            col4.DisplayMemberBinding = new Binding("AvailbleSeats");
+            col4.Header = "Available";
+            col4.DisplayMemberBinding = new Binding("AvailableSeats");
             col4.Width = 100;
             view.Columns.Add(col4);
             // create view
@@ -200,7 +230,8 @@ namespace SFlightBooking
             if (flightIndex != -1 && customerIndex != -1)
             {
                 btn_bookFlight.IsEnabled = true;
-            } else
+            }
+            else
             {
                 btn_bookFlight.IsEnabled = false;
             }

@@ -18,7 +18,7 @@ namespace SFlightBooking {
     /// </summary>
     public partial class CustomerFlightTable : Window {
 
-        List<Flight> flightList;
+        List<Flight> flightList = null;
         Customer customerInfo;
         int selectedIndex = -1;
 
@@ -97,8 +97,8 @@ namespace SFlightBooking {
             view.Columns.Add(col5);
 
             GridViewColumn col6 = new GridViewColumn();
-            col6.Header = "AvailbleSeats";
-            col6.DisplayMemberBinding = new Binding("AvailbleSeats");
+            col6.Header = "AvailableSeats";
+            col6.DisplayMemberBinding = new Binding("AvailableSeats");
             col6.Width = 80;
             view.Columns.Add(col6);
 

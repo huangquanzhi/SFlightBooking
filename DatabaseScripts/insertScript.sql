@@ -51,11 +51,11 @@ INSERT INTO `sheridanproject`.`flight`
 `Duration`,
 `flightDate`,
 `flightTime`,
-`availbleSeats`,
+`availableSeats`,
 `maxSeats`,
 `status`)
 VALUES
-("1355","Air Canada","Toronto","Beijing","700","2016-08-07","17:32","200","250","Availble");
+("1355","Air Canada","Toronto","Beijing","700","2016-08-07","17:32","200","250","Available");
 
 INSERT INTO `sheridanproject`.`flight`
 (`flightID`,
@@ -65,7 +65,7 @@ INSERT INTO `sheridanproject`.`flight`
 `Duration`,
 `flightDate`,
 `flightTime`,
-`availbleSeats`,
+`availableSeats`,
 `maxSeats`,
 `status`)
 VALUES
@@ -79,7 +79,7 @@ INSERT INTO `sheridanproject`.`flight`
 `Duration`,
 `flightDate`,
 `flightTime`,
-`availbleSeats`,
+`availableSeats`,
 `maxSeats`,
 `status`)
 VALUES
@@ -93,7 +93,7 @@ INSERT INTO `sheridanproject`.`flight`
 `Duration`,
 `flightDate`,
 `flightTime`,
-`availbleSeats`,
+`availableSeats`,
 `maxSeats`,
 `status`)
 VALUES
@@ -107,8 +107,8 @@ INSERT INTO `sheridanproject`.`flight`
 `Duration`,
 `flightDate`,
 `flightTime`,
-`availbleSeats`,
+`availableSeats`,
 `maxSeats`,
 `status`)
 VALUES
-("2223","Air Canada","San Jose","Toronto","300","2016-08-09","15:45","150","250","Availble");
+("2223","Air Canada","San Jose","Toronto","300","2016-08-09","15:45","150","250","Available");

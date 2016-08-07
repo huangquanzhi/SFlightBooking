@@ -72,7 +72,7 @@ namespace SFlightBooking.Connection
                             rd.GetInt32(rd.GetOrdinal("duration")),
                             (string)rd["flightDate"],
                             (string)rd["flightTime"],
-                            rd.GetInt32(rd.GetOrdinal("availbleSeats")),
+                            rd.GetInt32(rd.GetOrdinal("availableSeats")),
                             rd.GetInt32(rd.GetOrdinal("maxSeats")),
                             (string)rd["status"])
                             );

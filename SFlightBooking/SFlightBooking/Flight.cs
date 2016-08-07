@@ -17,12 +17,12 @@ namespace SFlightBooking
         private int duration;
         private string date;
         private string time;
-        private int availbleSeats;
+        private int availableSeats;
         private int maxSeats;
         private string status;
         private double price;
 
-        public Flight(string flightID, string airline, string departure, string destination, int duration, string date, string time, int availbleSeats, int maxSeats, string status, double price)
+        public Flight(string flightID, string airline, string departure, string destination, int duration, string date, string time, int availableSeats, int maxSeats, string status, double price)
         {
             this.flightID = flightID;
             this.airline = airline;
@@ -31,13 +31,13 @@ namespace SFlightBooking
             this.duration = duration;
             this.date = date;
             this.time = time;
-            this.availbleSeats = availbleSeats;
+            this.availableSeats = availableSeats;
             this.maxSeats = maxSeats;
             this.status = status;
             this.price = price;
         }
 
-        public Flight(string flightID, string airline, string departure, string destination, int duration, string date, string time, int availbleSeats, int maxSeats, string status)
+        public Flight(string flightID, string airline, string departure, string destination, int duration, string date, string time, int availableSeats, int maxSeats, string status)
         {
             this.flightID = flightID;
             this.airline = airline;
@@ -46,7 +46,7 @@ namespace SFlightBooking
             this.duration = duration;
             this.date = date;
             this.time = time;
-            this.availbleSeats = availbleSeats;
+            this.availableSeats = availableSeats;
             this.maxSeats = maxSeats;
             this.status = status;
         }
@@ -142,16 +142,16 @@ namespace SFlightBooking
             }
         }
 
-        public int AvailbleSeats
+        public int AvailableSeats
         {
             get
             {
-                return availbleSeats;
+                return availableSeats;
             }
 
             set
             {
-                availbleSeats = value;
+                availableSeats = value;
             }
         }
 

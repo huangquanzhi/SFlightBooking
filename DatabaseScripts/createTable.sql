@@ -24,7 +24,7 @@ CREATE TABLE Flight(
 	Duration INT NOT NULL,
 	flightDate VARCHAR(100) NOT NULL,
 	flightTime VARCHAR(100) NOT NULL,
-	availbleSeats INT CHECK(availbleSeats < maxSeats),
+	availableSeats INT CHECK(availableSeats < maxSeats),
 	maxSeats INT CHECK(maxSeats > 0),
 	status VARCHAR(10) NOT NULL,
 	CONSTRAINT pk_flightID PRIMARY KEY ( flightID )
@@ -33,7 +33,6 @@ CREATE TABLE Flight(
 CREATE TABLE Ticket(
 	uid INT NOT NULL,
 	flightID VARCHAR(10) NOT NULL,
-	price DECIMAL(10,2) NOT NULL,
 	CONSTRAINT pk_Ticket PRIMARY KEY ( uid, flightID ),
 	CONSTRAINT fk_uid FOREIGN KEY (uid) REFERENCES Customer(uid),
 	CONSTRAINT fk_flightID FOREIGN KEY (flightID) REFERENCES Flight(flightID)
