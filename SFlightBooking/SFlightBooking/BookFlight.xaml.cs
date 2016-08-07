@@ -124,7 +124,6 @@ namespace SFlightBooking
                 foreach (Flight f in flightList)
                 {
                     // only display available flights
-                    MessageBox.Show(f.Status);
                     if (f.Status == "Available")
                     {
                         temp.Add(f);

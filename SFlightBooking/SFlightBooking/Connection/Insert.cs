@@ -51,6 +51,7 @@ namespace SFlightBooking.Connection
 
         public bool BookFlight(MySqlCommand cmd, Customer c, Flight f)
         {
+
             try
             {
                 // create command
@@ -68,9 +69,10 @@ namespace SFlightBooking.Connection
                 }
 
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+
+                throw new Exception("Can not book or flight already booked!");
             }
         }
 
