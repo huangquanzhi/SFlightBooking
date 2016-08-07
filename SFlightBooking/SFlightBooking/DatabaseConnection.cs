@@ -15,6 +15,7 @@ namespace SFlightBooking
         public DatabaseConnection()
         {
             connectionString = "Connection";
+
         }
 
         public DatabaseConnection(string connectionString)
