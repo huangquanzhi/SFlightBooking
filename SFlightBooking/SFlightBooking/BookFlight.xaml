@@ -5,20 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SFlightBooking"
         mc:Ignorable="d"
-        Title="BookFlight" Height="348.293" Width="547.317">
+        Title="BookFlight" Height="348.293" Width="601.951">
     <Grid>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="190" Margin="32,27,0,0" VerticalAlignment="Top" Width="330">
+        <ListView x:Name="lv_flights" HorizontalAlignment="Left" Height="205" Margin="19,27,0,0" VerticalAlignment="Top" Width="391">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
-            <ListBoxItem Content="Test"/>
         </ListView>
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="190" Margin="385,27,0,0" VerticalAlignment="Top" Width="133">
-            <ListBoxItem Content="Test"/>
-        </ListBox>
-        <Button x:Name="btn_bookFlight" Content="Book Flight" HorizontalAlignment="Left" Margin="142,259,0,0" VerticalAlignment="Top" Width="257"/>
+        <GroupBox Margin="426,10,10,85" Header="Customers">
+            <ListBox x:Name="lb_customers" HorizontalAlignment="Left" Height="190" Margin="0,0,0,-10" VerticalAlignment="Top" Width="148">
+            </ListBox>
+        </GroupBox>
+
+        <Button x:Name="btn_bookFlight" Content="Book Flight" HorizontalAlignment="Left" Margin="19,259,0,0" VerticalAlignment="Top" Width="257" Click="btn_bookFlight_Click"/>
+        <Button x:Name="btn_close" Content="Close" HorizontalAlignment="Left" Margin="327,259,0,0" VerticalAlignment="Top" Width="257"/>
 
     </Grid>
 </Window>
