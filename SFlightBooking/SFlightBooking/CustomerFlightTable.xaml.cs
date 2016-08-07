@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using SFlightBooking.Connection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,34 +14,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace SFlightBooking {
+namespace SFlightBooking
+{
     /// <summary>
     /// Interaction logic for CustomerFlightTable.xaml
     /// </summary>
-    public partial class CustomerFlightTable : Window {
+    public partial class CustomerFlightTable : Window
+    {
 
         List<Flight> flightList = null;
         Customer customerInfo;
         int selectedIndex = -1;
 
-        public CustomerFlightTable() {
+        public CustomerFlightTable()
+        {
             InitializeComponent();
             initListView();
         }
 
         public CustomerFlightTable(Customer c)
         {
+            InitializeComponent();
             customerInfo = c;
             initListView();
-            loadCustomerFlight();
+            listviewLoad();
         }
-
-        private List<Flight> loadCustomerFlight()
-        {
-            // TODO: user customer info to retrive data from database
-            return new List<Flight>();
-        }
-
 
         private void btn_removeFlight_Click(object sender, RoutedEventArgs e)
         {
@@ -56,10 +55,28 @@ namespace SFlightBooking {
         {
             List<Flight> items = new List<Flight>();
 
-            // TODO: Load flights from database base on selected customer
-            string firstName = customerInfo.FirstName;
+            //Load flights from database base on selected customer
 
-            lv_customerFlight.ItemsSource = items;
+            Database db = new Database();
+            Select select = new Select();
+            List<Flight> temp = new List<Flight>();
+
+            try
+            {
+
+                // open connection to retriev flights from database
+                MySqlConnection conn = db.CreateConnection();
+                conn.Open();
+                flightList = select.FlightListByCustomer(db.CreateCommand(conn), customerInfo);
+                conn.Close();
+                // load to list
+                lv_customerFlight.ItemsSource = flightList;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Flight List error: " + ex.Message.ToString());
+            }
+
         }
 
         private void initListView()
@@ -120,6 +137,12 @@ namespace SFlightBooking {
         private void btn_close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_viewFlight_Click(object sender, RoutedEventArgs e)
+        {
+            FlightInfo fi = new FlightInfo(flightList[SelectedIndex()]);
+            fi.Show();
         }
     }
 }

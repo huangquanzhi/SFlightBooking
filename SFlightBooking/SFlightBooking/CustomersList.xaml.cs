@@ -64,6 +64,7 @@ namespace SFlightBooking
             if (selectedIndex != -1)
             {
                 CustomerFlightTable flightRecord = new CustomerFlightTable(customerList[selectedIndex]);
+                flightRecord.Show();
             } else
             {
                 MessageBox.Show("Please Selecte a customer");

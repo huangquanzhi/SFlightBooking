@@ -63,7 +63,7 @@ namespace SFlightBooking.Connection
                     while (rd.Read())
                     {
 
-                        // add customer to list
+                        // add flight to list
                         list.Add(new Flight(
                              (string)rd["FlightID"],
                             (string)rd["Airline"],
@@ -78,7 +78,45 @@ namespace SFlightBooking.Connection
                             );
                     }
                 }
-                // return customer list
+                // return flight list
+                return list;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public List<Flight> FlightListByCustomer(MySqlCommand cmd, Customer c)
+        {
+
+            List<Flight> list = new List<Flight>();
+
+            try
+            {
+                cmd.CommandText = "SELECT DISTINCT * FROM Ticket t, Customer c, Flight f WHERE c.uid = t.uid AND f.flightID = t.flightID AND c.uid = @uid;";
+                cmd.Parameters.AddWithValue("@uid", c.Uid);
+
+                using (MySqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        // add flight to list
+                        list.Add(new Flight(
+                             (string)rd["FlightID"],
+                            (string)rd["Airline"],
+                            (string)rd["Departure"],
+                            (string)rd["Destination"],
+                            rd.GetInt32(rd.GetOrdinal("duration")),
+                            (string)rd["flightDate"],
+                            (string)rd["flightTime"],
+                            rd.GetInt32(rd.GetOrdinal("availableSeats")),
+                            rd.GetInt32(rd.GetOrdinal("maxSeats")),
+                            (string)rd["status"])
+                            );
+                    }
+                }
+                // return flight list
                 return list;
             }
             catch
