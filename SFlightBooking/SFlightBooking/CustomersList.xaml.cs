@@ -42,6 +42,7 @@ namespace SFlightBooking
                 // Grab data from List<Customer> using index and create a edit form
                 Registration editCustomer = new Registration(customerList[selectedIndex]);
                 editCustomer.Show();
+                this.Close();
             }
             else
             {
@@ -54,7 +55,8 @@ namespace SFlightBooking
             selectedIndex = GetSelectedIndex();
             if (selectedIndex != -1)
             {
-
+                // todo : delete
+                this.Close();
             }
         }
 
@@ -65,6 +67,7 @@ namespace SFlightBooking
             {
                 CustomerFlightTable flightRecord = new CustomerFlightTable(customerList[selectedIndex]);
                 flightRecord.Show();
+                this.Close();
             } else
             {
                 MessageBox.Show("Please Selecte a customer");

@@ -112,3 +112,40 @@ INSERT INTO `sheridanproject`.`flight`
 `status`)
 VALUES
 ("2223","Air Canada","San Jose","Toronto","300","2016-08-09","15:45","150","250","Available");
+
+
+INSERT INTO `sheridanproject`.`ticket`
+(`uid`,
+`flightID`)
+VALUES
+(1,1332);
+
+INSERT INTO `sheridanproject`.`ticket`
+(`uid`,
+`flightID`)
+VALUES
+(1,1335);
+
+INSERT INTO `sheridanproject`.`ticket`
+(`uid`,
+`flightID`)
+VALUES
+(1,2500);
+
+INSERT INTO `sheridanproject`.`ticket`
+(`uid`,
+`flightID`)
+VALUES
+(3,3110);
+
+INSERT INTO `sheridanproject`.`ticket`
+(`uid`,
+`flightID`)
+VALUES
+(3,1332);
+
+INSERT INTO `sheridanproject`.`ticket`
+(`uid`,
+`flightID`)
+VALUES
+(2,2223);

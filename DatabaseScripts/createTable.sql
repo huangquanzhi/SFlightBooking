@@ -31,7 +31,7 @@ CREATE TABLE Flight(
 );
 
 CREATE TABLE Ticket(
-	uid INT NOT NULL,
+	uid INT,
 	flightID VARCHAR(10) NOT NULL,
 	CONSTRAINT pk_Ticket PRIMARY KEY ( uid, flightID ),
 	CONSTRAINT fk_uid FOREIGN KEY (uid) REFERENCES Customer(uid),

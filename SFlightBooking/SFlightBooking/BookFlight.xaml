@@ -15,7 +15,7 @@
             </ListView.View>
         </ListView>
         <GroupBox Margin="462,27,10,85" Header="Customers">
-            <ListBox x:Name="lb_customers" HorizontalAlignment="Left" Height="165" VerticalAlignment="Top" Width="200" SelectionChanged="lb_customers_SelectionChanged"/>
+            <ListBox x:Name="lb_customers" HorizontalAlignment="Left" Height="157" VerticalAlignment="Top" Width="200" SelectionChanged="lb_customers_SelectionChanged"/>
         </GroupBox>
 
         <Button x:Name="btn_bookFlight" Content="Book Flight" HorizontalAlignment="Left" Margin="19,259,0,0" VerticalAlignment="Top" Width="199" Click="btn_bookFlight_Click" IsEnabled="False"/>

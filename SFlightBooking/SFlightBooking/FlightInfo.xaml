@@ -29,7 +29,7 @@
             </Grid>
         </GroupBox>
         <TextBox x:Name="tb_airline" HorizontalAlignment="Left" Height="23" Margin="133,168,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Airline" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <TextBox x:Name="tb_available" HorizontalAlignment="Left" Height="23" Margin="133,235,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Available" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="tb_available" HorizontalAlignment="Left" Height="23" Margin="133,235,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="0" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <Label x:Name="label" Content="Available: " HorizontalAlignment="Left" Margin="60,235,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy" Content="Max Capacity: " HorizontalAlignment="Left" Margin="281,235,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy1" Content="Departure: " HorizontalAlignment="Left" Margin="60,48,0,0" VerticalAlignment="Top"/>

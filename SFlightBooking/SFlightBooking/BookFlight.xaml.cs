@@ -23,7 +23,7 @@ namespace SFlightBooking
     {
 
         List<Customer> customerList;
-        List<Flight> flightList;
+        List<Flight> flightList = new List<Flight>();
         int flightIndex = -1;
         int customerIndex = -1;
 
@@ -118,19 +118,19 @@ namespace SFlightBooking
                 // open connection to retriev flights from database
                 MySqlConnection conn = db.CreateConnection();
                 conn.Open();
-                flightList = select.FlightList(db.CreateCommand(conn));
+                temp = select.FlightList(db.CreateCommand(conn));
                 conn.Close();
 
-                foreach (Flight f in flightList)
+                foreach (Flight f in temp)
                 {
                     // only display available flights
                     if (f.Status == "Available")
                     {
-                        temp.Add(f);
+                        flightList.Add(f);
                     }
                 }
 
-                lv_flights.ItemsSource = temp;
+                lv_flights.ItemsSource = flightList;
             }
             catch (Exception ex)
             {

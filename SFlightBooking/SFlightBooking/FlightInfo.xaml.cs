@@ -44,7 +44,7 @@ namespace SFlightBooking
                 tb_duration.Text = flightInfo.Duration + " minutes";
                 dp_date.Text = flightInfo.Date;
                 tp_time.Text = flightInfo.Time;
-                tb_airline.Text = "" + flightInfo.AvailableSeats;
+                tb_available.Text = "" + flightInfo.AvailableSeats;
                 tb_capacity.Text = "" + flightInfo.MaxSeats;
                 switch (flightInfo.Status)
                 {

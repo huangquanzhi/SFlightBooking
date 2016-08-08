@@ -49,10 +49,18 @@ namespace SFlightBooking
                 tb_address.Text = c.Address;
                 tb_phoneNumber.Text = c.Phone;
                 dp_birth.Text = c.BirthDate;
-                //TODO: radio set
                 tb_enName.Text = c.EnmergencyName;
                 tb_enRelation.Text = c.EnmergencyRelationship;
                 tb_enPhone.Text = c.EnmergencyPhone;
+
+                if (c.Gender == "Male")
+                {
+                    rb_male.IsChecked = true;
+                }
+                else if(c.Gender == "Female"){
+                    rb_female.IsChecked = true;
+                }
+
             }
             catch (Exception e)
             {
@@ -68,6 +76,20 @@ namespace SFlightBooking
                 // gender
                 string gender = (bool)rb_male.IsChecked ? "Male" : "Female";
 
+                // customer object
+                Customer customer = new Customer()
+                {
+                    FirstName = tb_firstName.Text,
+                    LastName = tb_lastName.Text,
+                    Address = tb_address.Text,
+                    Phone = tb_phoneNumber.Text,
+                    BirthDate = dp_birth.Text,
+                    Gender = gender,
+                    EnmergencyName = tb_enName.Text,
+                    EnmergencyRelationship = tb_enRelation.Text,
+                    EnmergencyPhone = tb_enPhone.Text
+                };
+
                 // Register as new customer
                 if (editCustomer == null)
                 {
@@ -81,21 +103,9 @@ namespace SFlightBooking
                     {
                         // customer object, it uses SETTER which will throw exception if empty
 
-                        Customer reg = new Customer()
-                        {
-                            FirstName = tb_firstName.Text,
-                            LastName = tb_lastName.Text,
-                            Address = tb_address.Text,
-                            Phone = tb_phoneNumber.Text,
-                            BirthDate = dp_birth.Text,
-                            Gender = gender,
-                            EnmergencyName = tb_enName.Text,
-                            EnmergencyRelationship = tb_enRelation.Text,
-                            EnmergencyPhone = tb_enPhone.Text
-                        };
                         conn.Open();
 
-                        status = newCustomer.AddCustomer(db.CreateCommand(conn), reg);
+                        status = newCustomer.AddCustomer(db.CreateCommand(conn), customer);
 
                         conn.Close();
                         if (status)
@@ -129,7 +139,10 @@ namespace SFlightBooking
                     MySqlConnection conn = db.CreateConnection();
                     conn.Open();
 
-                    if (update.EditCustomer(db.CreateCommand(conn), editCustomer))
+                    // set the uid for editing 
+                    customer.Uid = editCustomer.Uid;
+
+                    if (update.EditCustomer(db.CreateCommand(conn), customer))
                     {
                         MessageBox.Show("Customer Edited");
                         this.Close();
@@ -168,6 +181,7 @@ namespace SFlightBooking
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: Refresh customer list when close
             this.Close();
         }
     }
