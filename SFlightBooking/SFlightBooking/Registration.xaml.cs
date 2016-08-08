@@ -98,16 +98,18 @@ namespace SFlightBooking
                         status = newCustomer.AddCustomer(db.CreateCommand(conn), reg);
 
                         conn.Close();
-                        if(status)
+                        if (status)
                         {
                             MessageBox.Show("Customer Added");
                             clear();
-                        } else
+                        }
+                        else
                         {
                             MessageBox.Show("Fail to add customer");
                         }
 
-                    } catch (CustomerException c)
+                    }
+                    catch (CustomerException c)
                     {
                         MessageBox.Show("Required: " + c.Message.ToString());
                     }
@@ -120,12 +122,29 @@ namespace SFlightBooking
                 }
                 else
                 {
-                    // TODO: create update object and update the current customer in database with the filled information
+
+                    // call update on database
+                    Database db = new Database();
+                    Update update = new Update();
+                    MySqlConnection conn = db.CreateConnection();
+                    conn.Open();
+
+                    if (update.EditCustomer(db.CreateCommand(conn), editCustomer))
+                    {
+                        MessageBox.Show("Customer Edited");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fail to update information.");
+                    }
+                    conn.Close();
+
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                MessageBox.Show("Edit error: " + ex.Message.ToString());
             }
         }
 
