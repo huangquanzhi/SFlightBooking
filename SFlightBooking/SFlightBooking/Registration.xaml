@@ -14,6 +14,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}" ResizeMode="NoResize"
+        Icon="./Logo.ico"
         >
 
     <Grid Margin="0,0,3.8,-0.4">

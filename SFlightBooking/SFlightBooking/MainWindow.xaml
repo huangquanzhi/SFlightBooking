@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SFlightBooking"
         mc:Ignorable="d"
-        Title="MainWindow" Height="572.442" Width="525"
+        Title="MainWindow" Height="357.942" Width="327"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -14,10 +14,13 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}" ResizeMode="NoResize"
+        Icon="./Logo.ico"
         >
     <Grid>
-        <Button Content="Registers" x:Name="btn_registerForm" Margin="127,77,131,360" Click="btn_registerForm_Click" />
-        <Button Content="Customer List" x:Name="btn_customerListForm" Margin="129,180,131,259" Click="btn_customerListForm_Click" />
-        <Button Content="Book Flight" x:Name="btn_bookFlight" Margin="129,318,131,109" Click="btn_bookFlight_Click"  />
+        <Button Content="Registers" x:Name="btn_registerForm" Click="btn_registerForm_Click" Margin="42,18,27,241" />
+        <Button Content="Customer List" x:Name="btn_customerListForm" Click="btn_customerListForm_Click" Margin="42,86,27,173" />
+        <Button Content="Book Flight" x:Name="btn_bookFlight" Click="btn_bookFlight_Click" Margin="42,148,27,111"  />
+        <Button Content="Close" x:Name="btn_close" Click="btn_close_Click" Margin="42,210,27,49" />
+        <Label x:Name="label" Content="Made By:  Jackie Huang, Danella Olsen, Ahmed Arab" HorizontalAlignment="Left" Margin="0,293,0,0" VerticalAlignment="Top" Width="311"/>
     </Grid>
 </Window>

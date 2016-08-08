@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SFlightBooking"
         mc:Ignorable="d"
-        Title="BookFlight" Height="348.293" Width="698.536" ResizeMode="NoResize">
+        Title="BookFlight" Height="348.293" Width="698.536" ResizeMode="NoResize"
+        Icon="./Logo.ico"        
+        >
     <Grid>
         <ListView x:Name="lv_flights" HorizontalAlignment="Left" Height="205" Margin="19,27,0,0" VerticalAlignment="Top" Width="430" SelectionChanged="lv_flights_SelectionChanged">
             <ListView.View>

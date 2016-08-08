@@ -49,5 +49,10 @@ namespace SFlightBooking {
             BookFlight bl = new BookFlight();
             bl.Show();
         }
+
+        private void btn_close_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

@@ -13,7 +13,9 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-    Title="FlightInfo" Height="484.662" Width="567.073" ResizeMode="NoResize">
+        Title="FlightInfo" Height="484.662" Width="567.073" ResizeMode="NoResize"
+        Icon="./Logo.ico"
+        >
     <Grid>
         <TextBox x:Name="tb_location" HorizontalAlignment="Left" Height="23" Margin="133,48,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Location" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <TextBox x:Name="tb_destination" HorizontalAlignment="Left" Height="23" Margin="372,48,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Destination"  VerticalAlignment="Top" Width="120" IsEnabled="False"/>

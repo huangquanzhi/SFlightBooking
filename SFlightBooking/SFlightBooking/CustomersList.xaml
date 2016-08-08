@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SFlightBooking"
         mc:Ignorable="d"
-        Title="Customers List" Height="344.84" Width="753.997" ResizeMode="NoResize">
+        Title="Customers List" Height="344.84" Width="753.997" ResizeMode="NoResize"
+        Icon="./Logo.ico"
+        >
     <Grid>
         <ListView x:Name="lv_customerList" HorizontalAlignment="Left" Height="207" Margin="19,10,0,0" VerticalAlignment="Top" Width="707" SelectionChanged="lv_customerList_SelectionChanged">
             <ListView.View>
