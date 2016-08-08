@@ -1,4 +1,7 @@
-﻿using MySql.Data.MySqlClient;
+﻿///<summary>
+///Class contains methods for all Select queries 
+/// </summary>
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -11,6 +14,11 @@ namespace SFlightBooking.Connection
     class Select
     {
 
+        /// <summary>
+        /// Queries for all the customers, creates customers, returns list of customer objects
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <returns></returns>
         public List<Customer> CustomerList(MySqlCommand cmd)
         {
 
@@ -48,7 +56,11 @@ namespace SFlightBooking.Connection
                 throw;
             }
         }
-
+        /// <summary>
+        /// Queries for all the flightss, creates Flight, returns list of Flight objects
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <returns></returns>
         public List<Flight> FlightList(MySqlCommand cmd)
         {
 
@@ -87,6 +99,12 @@ namespace SFlightBooking.Connection
             }
         }
 
+        /// <summary>
+        /// Returns a list of all the flights booked by a single customer
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <param name="c"></param>
+        /// <returns></returns>
         public List<Flight> FlightListByCustomer(MySqlCommand cmd, Customer c)
         {
 
