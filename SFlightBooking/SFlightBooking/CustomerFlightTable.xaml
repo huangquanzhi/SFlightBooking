@@ -9,15 +9,15 @@
         Icon="./Logo.ico"
         >
     <Grid>
-        <ListView x:Name="lv_customerFlight" HorizontalAlignment="Left" Height="169" Margin="21,10,0,0" VerticalAlignment="Top" Width="659" SelectionChanged="lv_customerFlight_SelectionChanged">
+        <ListView ToolTip="Select a flight" x:Name="lv_customerFlight" HorizontalAlignment="Left" Height="169" Margin="21,10,0,0" VerticalAlignment="Top" Width="659" SelectionChanged="lv_customerFlight_SelectionChanged">
             <ListView.View>
                 <GridView>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="btn_removeFlight" Content="Remove Flight" HorizontalAlignment="Left" Margin="21,200,0,0" VerticalAlignment="Top" Width="169" Click="btn_removeFlight_Click" IsEnabled="False"/>
-        <Button x:Name="btn_close" Content="Close" HorizontalAlignment="Left" Margin="511,200,0,0" VerticalAlignment="Top" Width="169" Click="btn_close_Click"/>
-        <Button x:Name="btn_viewFlight" Content="View Flight" HorizontalAlignment="Left" Margin="272,200,0,0" VerticalAlignment="Top" Width="169" Click="btn_viewFlight_Click" IsEnabled="False"/>
+        <Button ToolTip="Remove selected flight" x:Name="btn_removeFlight" Content="Remove Flight" HorizontalAlignment="Left" Margin="21,200,0,0" VerticalAlignment="Top" Width="169" Click="btn_removeFlight_Click" IsEnabled="False"/>
+        <Button ToolTip="Close Window" x:Name="btn_close" Content="Close" HorizontalAlignment="Left" Margin="511,200,0,0" VerticalAlignment="Top" Width="169" Click="btn_close_Click"/>
+        <Button ToolTip="View Flight" x:Name="btn_viewFlight" Content="View Flight" HorizontalAlignment="Left" Margin="272,200,0,0" VerticalAlignment="Top" Width="169" Click="btn_viewFlight_Click" IsEnabled="False"/>
 
     </Grid>
 </Window>
