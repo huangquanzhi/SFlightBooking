@@ -154,7 +154,22 @@ namespace SFlightBooking
 
         private void lv_customerList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if(GetSelectedIndex() != -1)
+            {
+                btn_update.IsEnabled = true;
+                btn_delete.IsEnabled = true;
+                btn_viewRecord.IsEnabled = true;
+            } else
+            {
+                btn_update.IsEnabled = false;
+                btn_delete.IsEnabled = false;
+                btn_viewRecord.IsEnabled = false;
+            }
+        }
 
+        private void btn_close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -5,19 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SFlightBooking"
         mc:Ignorable="d"
-        Title="Customers List" Height="376.017" Width="753.997" ResizeMode="NoResize">
+        Title="Customers List" Height="344.84" Width="753.997" ResizeMode="NoResize">
     <Grid>
         <ListView x:Name="lv_customerList" HorizontalAlignment="Left" Height="207" Margin="19,10,0,0" VerticalAlignment="Top" Width="707" SelectionChanged="lv_customerList_SelectionChanged">
             <ListView.View>
                 <GridView>
-  
+
                 </GridView>
             </ListView.View>
         </ListView>
-        <Grid Margin="0,217,-0.4,0.4">
-            <Button Margin="29,31,567.4,30.6" x:Name="btn_update" Content="Update" Click="btn_update_Click"/>
-            <Button Margin="282,40,304.4,39.6"  x:Name="btn_delete" Content="Delete" Click="btn_delete_Click"/>
-            <Button Margin="563,40,28.4,39.6" x:Name="btn_viewRecord"  Content="View Record" Click="btn_viewRecord_Click"/>
+        <Grid Margin="0,172,0,-38" Height="213" VerticalAlignment="Top">
+            <Button Margin="25,28,571.4,69.6" x:Name="btn_update" Content="Update" Click="btn_update_Click" IsEnabled="False"/>
+            <Button Margin="197,70,389,111"  x:Name="btn_delete" Content="Delete" Click="btn_delete_Click" IsEnabled="False"/>
+            <Button Margin="388,70,203,111" x:Name="btn_viewRecord"  Content="View Record" Click="btn_viewRecord_Click" IsEnabled="False"/>
+            <Button Margin="571,70,20,111" x:Name="btn_close"  Content="Close" Click="btn_close_Click"/>
 
         </Grid>
 

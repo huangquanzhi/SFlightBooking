@@ -21,9 +21,9 @@ namespace SFlightBooking.Connection
                 cmd.Parameters.AddWithValue("@uid", c.Uid);
                 cmd.Parameters.AddWithValue("@fName", c.FirstName);
                 cmd.Parameters.AddWithValue("@lName", c.LastName);
-                cmd.Parameters.AddWithValue("@address", c.BirthDate);
-                cmd.Parameters.AddWithValue("@phone", c.Gender);
-                cmd.Parameters.AddWithValue("@gender", c.Phone);
+                cmd.Parameters.AddWithValue("@address", c.Address);
+                cmd.Parameters.AddWithValue("@phone", c.Phone);
+                cmd.Parameters.AddWithValue("@gender", c.Gender);
                 cmd.Parameters.AddWithValue("@birthDate", c.BirthDate);
                 cmd.Parameters.AddWithValue("@enName", c.EnmergencyName);
                 cmd.Parameters.AddWithValue("@enRelation", c.EnmergencyRelationship);

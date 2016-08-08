@@ -185,5 +185,18 @@ namespace SFlightBooking
                 MessageBox.Show("Please select a flight!");
             }
         }
+
+        private void lv_customerFlight_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(SelectedIndex() != -1)
+            {
+                btn_removeFlight.IsEnabled = true;
+                btn_viewFlight.IsEnabled = true;
+            } else
+            {
+                btn_removeFlight.IsEnabled = false;
+                btn_viewFlight.IsEnabled = false;
+            }
+        }
     }
 }
