@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="b5ae7980-ed80-45f9-ac62-45b1a3b97437" name="UMLClassDiagram1" linkedPackageId="bcee0d62-0d1e-4614-a1e9-e5b25645bf92" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="cdb93978-90ac-44be-be71-ebfd468a24f5">
+      <profileInstance Id="d37291ff-4165-44ea-9ca8-17b90eaa997a" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="788425b0-b922-4c9a-ba48-aa9fcfbed019">
+      <profileInstance Id="c4d25298-3f63-48f4-b4b9-121ff7790c9a" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="1b2a26f1-7d30-490f-b990-0a1e1feae990" name="Connection">
+        <elementDefinition Id="d491384f-ce59-4ab6-9749-9914d6453df5" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="c74fcc53-ba62-4b9a-9408-02b051327544" name="Database" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="94ba974a-6cda-40ea-9e37-dde6389a0707" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="8449db2f-b1f0-475c-86fb-1d9310930085" name="Insert" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="a889f5b6-5b6d-469a-99bd-34c6bc2694c7" />
+              <targetEnds>
+                <association Id="539fe780-05fb-43bb-90ce-9ba61a58dc4a" isDerived="false" sourceEndRoleName="Insert" targetEndRoleName="Database" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="c74fcc53-ba62-4b9a-9408-02b051327544" LastKnownName="Database" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="0665434b-a23b-4ae2-bd38-cf990914242f" name="Insert" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="8b738888-bdaf-42fb-82fa-9c2fae24c21a" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="fba0a6bf-c302-4caf-a902-94ec8c5e27bb" name="Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                        <elementDefinition Id="b4d48572-1c91-4a71-9bf5-c30a6a0cf8e4" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="b1d92f48-75ed-4e27-91a0-46b775c331b6" />
+                </association>
+              </targetEnds>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="020581a6-728c-465a-91ed-58a13853b73f" name="Delete" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="f4267414-7df6-4e76-8bb3-6e6e5e679622" />
+              <targetEnds>
+                <association Id="bb5e29d9-2c14-4f0b-a4ba-b528ef9aaba0" isDerived="false" sourceEndRoleName="Delete" targetEndRoleName="Database" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="c74fcc53-ba62-4b9a-9408-02b051327544" LastKnownName="Database" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="7e88c6f2-10ff-49cb-b9b3-1a98e1084e9e" name="Delete" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="6941b3ea-678d-4410-910b-c1764fc51d85" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="b1047152-d093-433c-be58-67359d6a1e02" name="Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                        <elementDefinition Id="d24839f6-0061-445f-97a4-ab7be60a36db" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="41462aba-bb24-482f-a8ed-a3fe9448682e" />
+                </association>
+              </targetEnds>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="a307b44c-7781-4424-94c9-982bdf65367e" name="Update" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="5658b8e7-e101-4e13-8cb1-f7360585609c" />
+              <targetEnds>
+                <association Id="23e6d5f7-ae1d-4f0e-9a52-ede59db9e2b7" isDerived="false" sourceEndRoleName="Update" targetEndRoleName="Database" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="c74fcc53-ba62-4b9a-9408-02b051327544" LastKnownName="Database" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="0ee54397-c00e-4811-8e79-eaddad8f96d8" name="Update" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="665daecd-6729-4b6d-9c2f-ea03ed1a2951" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="355a7ab0-ddf6-4027-bfb1-a487afc23124" name="Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                        <elementDefinition Id="84adba07-737c-4760-a6ae-8ccb814711a4" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="b58b2506-cd6e-46c1-82cc-8eeb73e2590a" />
+                </association>
+              </targetEnds>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="c0b85dd3-55c6-4b13-bcc4-b826eac2449f" name="Objects">
+        <elementDefinition Id="a893e422-5613-415d-a2dc-a5ed0b58bb52" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="db790195-80d3-44f4-b401-5250666283e9" name="Customer" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="b232ad55-5730-4022-933a-66931fa14a59" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="ced0465d-2f52-4ab5-94bd-8a0720ac62a8" name="Flight" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="ce5f88f1-9e3a-493f-850f-adf3db8c5370" />
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+  </packagedElements>
+  <package Id="bcee0d62-0d1e-4614-a1e9-e5b25645bf92" name="ModelingProject1">
+    <elementDefinition Id="2f933e4e-af00-4f0d-9871-17a4a903935f" />
+  </package>
+</logicalClassDesignerModel>

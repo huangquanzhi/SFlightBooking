@@ -24,12 +24,12 @@
         </Grid.ColumnDefinitions>
         <materialDesign:Card Margin="10,10,10,0" Height="248" Grid.ColumnSpan="2">
             <Grid>
-                <TextBox x:Name="tb_firstName" HorizontalAlignment="Left" Height="23" Margin="23,54,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="First name" VerticalAlignment="Top" Width="191"/>
-                <TextBox x:Name="tb_lastName" HorizontalAlignment="Left" Height="23" Margin="241,54,0,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Last name"  VerticalAlignment="Top" Width="191"/>
-                <TextBox x:Name="tb_phoneNumber" HorizontalAlignment="Left" Height="23" Margin="241,111,0,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Phone" VerticalAlignment="Top" Width="191"/>
-                <TextBox x:Name="tb_address" HorizontalAlignment="Left" Height="23" Margin="23,111,0,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Address" VerticalAlignment="Top" Width="191"/>
-                <DatePicker x:Name="dp_birth" materialDesign:HintAssist.Hint="Birth Date" HorizontalAlignment="Left" Margin="23,167,0,0" VerticalAlignment="Top" Width="191"/>
-                <GroupBox Margin="241,139,10,28" Header="Gender">
+                <TextBox ToolTip="Enter a first name"  x:Name="tb_firstName" HorizontalAlignment="Left" Height="23" Margin="23,54,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="First name" VerticalAlignment="Top" Width="191"/>
+                <TextBox ToolTip="Enter a last name" x:Name="tb_lastName" HorizontalAlignment="Left" Height="23" Margin="241,54,0,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Last name"  VerticalAlignment="Top" Width="191"/>
+                <TextBox ToolTip="Enter phone number. Example: 9058409256" x:Name="tb_phoneNumber" HorizontalAlignment="Left" Height="23" Margin="241,111,0,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Phone" VerticalAlignment="Top" Width="191"/>
+                <TextBox ToolTip="Enter an address" x:Name="tb_address" HorizontalAlignment="Left" Height="23" Margin="23,111,0,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Address" VerticalAlignment="Top" Width="191"/>
+                <DatePicker ToolTip="yyyy-mm-dd" x:Name="dp_birth" materialDesign:HintAssist.Hint="Birth Date" HorizontalAlignment="Left" Margin="23,167,0,0" VerticalAlignment="Top" Width="191"/>
+                <GroupBox ToolTip="Select gender" Margin="241,139,10,28" Header="Gender">
                     <Grid>
                         <RadioButton x:Name="rb_male" Margin="0,0,74.8,0.2" Content="Male" IsChecked="True"/>
                         <RadioButton x:Name="rb_female" Margin="107,0,-0.2,0.2" Content="Female"/>
@@ -39,14 +39,14 @@
         </materialDesign:Card>
         <GroupBox Margin="19,274,20,120.4" Grid.ColumnSpan="2" Header="Emergency Contact">
             <Grid>
-                <TextBox x:Name="tb_enName" Height="23" Margin="10,19,304.4,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Name" VerticalAlignment="Top" Width="120"/>
-                <TextBox x:Name="tb_enRelation" Height="23" Margin="157,19,157.4,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Relationship" VerticalAlignment="Top" Width="120"/>
-                <TextBox x:Name="tb_enPhone" Height="23" Margin="304,19,10.4,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Phone" VerticalAlignment="Top" Width="120"/>
+                <TextBox ToolTip="Enter name" x:Name="tb_enName" Height="23" Margin="10,19,304.4,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Name" VerticalAlignment="Top" Width="120"/>
+                <TextBox ToolTip="Enter relation to customer" x:Name="tb_enRelation" Height="23" Margin="157,19,157.4,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Relationship" VerticalAlignment="Top" Width="120"/>
+                <TextBox ToolTip="Phone Number. Eg. 9054353423" x:Name="tb_enPhone" Height="23" Margin="304,19,10.4,0" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Phone" VerticalAlignment="Top" Width="120"/>
             </Grid>
         </GroupBox>
-        <Button  Style="{StaticResource MaterialDesignRaisedAccentButton}" x:Name="btn_register" Content="Save" HorizontalAlignment="Left" Margin="18,395,0,0" VerticalAlignment="Top" Width="450" Grid.ColumnSpan="2" Click="btn_register_Click"/>
-        <Button x:Name="btn_clear" Content="Clear" HorizontalAlignment="Left" Margin="19,446,0,0" VerticalAlignment="Top" Width="218" Click="btn_clear_Click"/>
-        <Button x:Name="btn_exit" Content="Exit" HorizontalAlignment="Left" Margin="9.8,446,0,0" VerticalAlignment="Top" Width="211" RenderTransformOrigin="0.507,0.45" Grid.Column="1" Click="btn_exit_Click"/>
+        <Button ToolTip="Save Data" Style="{StaticResource MaterialDesignRaisedAccentButton}" x:Name="btn_register" Content="Save" HorizontalAlignment="Left" Margin="18,395,0,0" VerticalAlignment="Top" Width="450" Grid.ColumnSpan="2" Click="btn_register_Click"/>
+        <Button ToolTip="Clear Form" x:Name="btn_clear" Content="Clear" HorizontalAlignment="Left" Margin="19,446,0,0" VerticalAlignment="Top" Width="218" Click="btn_clear_Click"/>
+        <Button ToolTip="Close Registration Window" x:Name="btn_exit" Content="Exit" HorizontalAlignment="Left" Margin="9.8,446,0,0" VerticalAlignment="Top" Width="211" RenderTransformOrigin="0.507,0.45" Grid.Column="1" Click="btn_exit_Click"/>
 
     </Grid>
 

@@ -17,10 +17,10 @@
         Icon="./Logo.ico"
         >
     <Grid>
-        <Button Content="Registers" x:Name="btn_registerForm" Click="btn_registerForm_Click" Margin="42,18,27,241" />
-        <Button Content="Customer List" x:Name="btn_customerListForm" Click="btn_customerListForm_Click" Margin="42,86,27,173" />
-        <Button Content="Book Flight" x:Name="btn_bookFlight" Click="btn_bookFlight_Click" Margin="42,148,27,111"  />
-        <Button Content="Close" x:Name="btn_close" Click="btn_close_Click" Margin="42,210,27,49" />
+        <Button ToolTip="Register Customer" Content="Registers" x:Name="btn_registerForm" Click="btn_registerForm_Click" Margin="42,18,27,241" />
+        <Button ToolTip="View Customers" Content="Customer List" x:Name="btn_customerListForm" Click="btn_customerListForm_Click" Margin="42,86,27,173" />
+        <Button ToolTip="Book a Flight" Content="Book Flight" x:Name="btn_bookFlight" Click="btn_bookFlight_Click" Margin="42,148,27,111"  />
+        <Button ToolTip="Close Application" Content="Close" x:Name="btn_close" Click="btn_close_Click" Margin="42,210,27,49" />
         <Label x:Name="label" Content="Made By:  Jackie Huang, Danella Olsen, Ahmed Arab" HorizontalAlignment="Left" Margin="0,293,0,0" VerticalAlignment="Top" Width="311"/>
     </Grid>
 </Window>
