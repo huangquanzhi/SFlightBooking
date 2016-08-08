@@ -91,14 +91,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SFlightBooking.exe" size="871936">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SFlightBooking.exe" size="872448">
       <assemblyIdentity name="SFlightBooking" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>qfZLcsWxXug9TaQN9lftWIu7WrvRlvRTG7RgTLrPoKw=</dsig:DigestValue>
+        <dsig:DigestValue>vvYksU7REt9D+bcqZ9C92Icfw/jZLBj0akPUaJ0dzHU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

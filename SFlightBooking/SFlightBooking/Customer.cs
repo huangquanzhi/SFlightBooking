@@ -122,7 +122,14 @@ namespace SFlightBooking
             {
                 if (value != "")
                 {
-                    phone = value;
+                    if (Validation.PhoneValidate(value))
+                    {
+                        phone = value;
+                    }
+                    else
+                    {
+                        throw new CustomerException("Phone must be a 10 digit number.");
+                    }
                 }
                 else
                 {
@@ -142,7 +149,14 @@ namespace SFlightBooking
             {
                 if (value != "")
                 {
-                    birthDate = value;
+                    if (Validation.DateValidate(value))
+                    {
+                        birthDate = value;
+                    }
+                    else
+                    {
+                        throw new CustomerException("Date must be in the format yyyy-mm-dd");
+                    }
                 }
                 else
                 {
@@ -222,7 +236,14 @@ namespace SFlightBooking
             {
                 if (value != "")
                 {
-                    enmergencyPhone = value;
+                    if (Validation.PhoneValidate(value))
+                    {
+                        enmergencyPhone = value;
+                    }
+                    else
+                    {
+                        throw new CustomerException("Emergency phone must be a 10 digit number.");
+                    }
                 }
                 else
                 {

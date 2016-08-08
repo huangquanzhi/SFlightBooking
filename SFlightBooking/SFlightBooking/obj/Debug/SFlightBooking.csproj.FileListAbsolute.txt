@@ -82,7 +82,6 @@ C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\o
 C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\obj\Debug\SFlightBooking.g.resources
 C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\obj\Debug\SFlightBooking.Properties.Resources.resources
 C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\obj\Debug\SFlightBooking.csproj.GenerateResource.Cache
-C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\bin\Debug\MySql.Data.dll
 C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\bin\Debug\MySql.Data.xml
 C:\Users\Jackie\Desktop\Github\SFlightBooking\SFlightBooking\SFlightBooking\bin\Debug\MySql.Data.dll
 C:\Users\Jackie\Desktop\Github\SFlightBooking\SFlightBooking\SFlightBooking\obj\Debug\SFlightBooking.TrustInfo.xml
@@ -90,3 +89,8 @@ C:\Users\Jackie\Desktop\Github\SFlightBooking\SFlightBooking\SFlightBooking\bin\
 C:\Users\Jackie\Desktop\Github\SFlightBooking\SFlightBooking\SFlightBooking\bin\Debug\SFlightBooking.application
 C:\Users\Jackie\Desktop\Github\SFlightBooking\SFlightBooking\SFlightBooking\obj\Debug\SFlightBooking.exe.manifest
 C:\Users\Jackie\Desktop\Github\SFlightBooking\SFlightBooking\SFlightBooking\obj\Debug\SFlightBooking.application
+C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\bin\Debug\SFlightBooking.exe.manifest
+C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\bin\Debug\SFlightBooking.application
+C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\obj\Debug\SFlightBooking.TrustInfo.xml
+C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\obj\Debug\SFlightBooking.exe.manifest
+C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\obj\Debug\SFlightBooking.application
