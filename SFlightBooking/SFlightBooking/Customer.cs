@@ -1,4 +1,8 @@
-﻿using System;
+﻿///<summary>
+///This class is for creating customer objects
+/// </summary>
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,11 +23,26 @@ namespace SFlightBooking
         private string enmergencyRelationship;
         private string enmergencyPhone;
 
+        /// <summary>
+        /// No argument constructer
+        /// </summary>
         public Customer()
         {
 
         }
 
+        /// <summary>
+        /// Constructor without id as param
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="address"></param>
+        /// <param name="phone"></param>
+        /// <param name="birthDate"></param>
+        /// <param name="gender"></param>
+        /// <param name="enmergencyName"></param>
+        /// <param name="enmergencyRelationship"></param>
+        /// <param name="enmergencyPhone"></param>
         public Customer(string firstName, string lastName, string address, string phone, string birthDate, string gender, string enmergencyName, string enmergencyRelationship, string enmergencyPhone)
         {
             this.firstName = firstName;
@@ -37,6 +56,19 @@ namespace SFlightBooking
             this.enmergencyPhone = enmergencyPhone;
         }
 
+        /// <summary>
+        /// Constructor with id as param
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="address"></param>
+        /// <param name="phone"></param>
+        /// <param name="birthDate"></param>
+        /// <param name="gender"></param>
+        /// <param name="enmergencyName"></param>
+        /// <param name="enmergencyRelationship"></param>
+        /// <param name="enmergencyPhone"></param>
         public Customer(int uid, string firstName, string lastName, string address, string phone, string birthDate, string gender, string enmergencyName, string enmergencyRelationship, string enmergencyPhone)
         {
             this.uid = uid;
@@ -51,6 +83,9 @@ namespace SFlightBooking
             this.enmergencyPhone = enmergencyPhone;
         }
 
+        /// <summary>
+        /// Getter and Setter for FirstName attribute
+        /// </summary>
         public string FirstName
         {
             get
@@ -71,6 +106,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Getter and Setter for LastName attribute
+        /// </summary>
         public string LastName
         {
             get
@@ -91,6 +129,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Getter and Setter for address attrbiute
+        /// </summary>
         public string Address
         {
             get
@@ -111,6 +152,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Getter and setter for phone attribute
+        /// </summary>
         public string Phone
         {
             get
@@ -164,7 +208,9 @@ namespace SFlightBooking
                 }
             }
         }
-
+        /// <summary>
+        /// Getter and setter for gender attribute
+        /// </summary>
         public string Gender
         {
             get
@@ -185,6 +231,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Getter and setter for emergencyName attribute
+        /// </summary>
         public string EnmergencyName
         {
             get
@@ -225,6 +274,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Getter and setter for emergencyphone attribute
+        /// </summary>
         public string EnmergencyPhone
         {
             get
@@ -252,6 +304,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Getter and setter for id attribute
+        /// </summary>
         public int Uid
         {
             get
