@@ -1,4 +1,8 @@
-﻿using MySql.Data.MySqlClient;
+﻿///<summary>
+///Used for upadting records in database
+///</summary>
+
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +14,12 @@ namespace SFlightBooking.Connection
     class Update
     {
 
+        /// <summary>
+        /// Updates customer, selects based on user ID
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <param name="c"></param>
+        /// <returns></returns>
         public bool EditCustomer(MySqlCommand cmd, Customer c)
         {
             // Uid is auto-increment
