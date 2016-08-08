@@ -69,7 +69,7 @@ namespace SFlightBooking.Connection
                 }
 
             }
-            catch (Exception ex)
+            catch
             {
 
                 throw new Exception("Can not book or flight already booked!");
