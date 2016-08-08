@@ -45,10 +45,44 @@ namespace SFlightBooking
             selectedIndex = SelectedIndex();
             if (selectedIndex != -1)
             {
-                // TODO: Remove flight
-                Flight data = flightList[selectedIndex];
+                // Remove flight          
+                try
+                {
+                    Flight data = flightList[selectedIndex];
 
+                    Database db = new Database();
+                    Delete delete = new Delete();
+                    MySqlConnection conn = db.CreateConnection();
+                    conn.Open();
+
+                    if (delete.DeleteTicketByCustomer(db.CreateCommand(conn), customerInfo, data))
+                    {
+                        // remove from list
+                        flightList.RemoveAt(selectedIndex);
+                        refreshList();
+                        MessageBox.Show("Removed!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to remove");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Delete error : " + ex.Message.ToString());
+                }
+
+            } else
+            {
+                MessageBox.Show("Please select a flight!");
             }
+        }
+
+        private void refreshList()
+        {
+            lv_customerFlight.ItemsSource = flightList;
+            lv_customerFlight.Items.Refresh();
         }
 
         private void listviewLoad()
@@ -141,8 +175,15 @@ namespace SFlightBooking
 
         private void btn_viewFlight_Click(object sender, RoutedEventArgs e)
         {
-            FlightInfo fi = new FlightInfo(flightList[SelectedIndex()]);
-            fi.Show();
+            selectedIndex = SelectedIndex();
+            if (selectedIndex != -1)
+            {
+                FlightInfo fi = new FlightInfo(flightList[SelectedIndex()]);
+                fi.Show();
+            } else
+            {
+                MessageBox.Show("Please select a flight!");
+            }
         }
     }
 }

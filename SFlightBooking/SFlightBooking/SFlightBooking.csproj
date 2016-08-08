@@ -74,6 +74,7 @@
       <DependentUpon>BookFlight.xaml</DependentUpon>
     </Compile>
     <Compile Include="Connection\Database.cs" />
+    <Compile Include="Connection\Delete.cs" />
     <Compile Include="Connection\Insert.cs" />
     <Compile Include="Connection\Select.cs" />
     <Compile Include="Connection\Update.cs" />
