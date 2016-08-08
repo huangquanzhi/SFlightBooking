@@ -1,4 +1,8 @@
-﻿using MySql.Data.MySqlClient;
+﻿///<summary>
+///Class for Deleting records
+/// </summary>
+
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +14,13 @@ namespace SFlightBooking.Connection
     class Delete
     {
 
+        /// <summary>
+        /// Deletes a single ticket by a customer
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <param name="c"></param>
+        /// <param name="f"></param>
+        /// <returns></returns>
         public bool DeleteTicketByCustomer(MySqlCommand cmd, Customer c, Flight f)
         {
             // Uid is auto-increment
@@ -38,6 +49,12 @@ namespace SFlightBooking.Connection
 
         }
 
+        /// <summary>
+        /// Used for removing all tickets booked by a single customer
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <param name="c"></param>
+        /// <returns></returns>
         private bool DeleteAllTicketByCustomer(MySqlCommand cmd, Customer c)
         {
             // Uid is auto-increment
@@ -59,6 +76,12 @@ namespace SFlightBooking.Connection
 
         }
 
+        /// <summary>
+        /// Removes customer from the database
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <param name="c"></param>
+        /// <returns>return true on success, false if failed</returns>
         public bool RemoveCustomer(MySqlCommand cmd, Customer c)
         {
             try
