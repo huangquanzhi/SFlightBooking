@@ -1,4 +1,7 @@
-﻿using MySql.Data.MySqlClient;
+﻿///<summary>
+///Class for insertion of data in database
+/// </summary>
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -13,7 +16,12 @@ namespace SFlightBooking.Connection
 {
     class Insert
     {
-
+        /// <summary>
+        /// Used for adding customers into database, takes in a MySqlCommand and Customer as arguments
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <param name="c"></param>
+        /// <returns></returns>
         public bool AddCustomer(MySqlCommand cmd, Customer c)
         {
             // Uid is auto-increment
@@ -49,6 +57,13 @@ namespace SFlightBooking.Connection
 
         }
 
+        /// <summary>
+        /// Used for booking flights, takes a MySqlCommand, Customer, and Flight as paramters/
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <param name="c"></param>
+        /// <param name="f"></param>
+        /// <returns>bool</returns>
         public bool BookFlight(MySqlCommand cmd, Customer c, Flight f)
         {
 
