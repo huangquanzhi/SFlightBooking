@@ -43,19 +43,13 @@ namespace SFlightBooking.Connection
             // Uid is auto-increment
             try
             {
-                // create command
                 cmd.CommandText = "DELETE FROM Ticket WHERE uid = @uid";
 
                 cmd.Parameters.AddWithValue("@uid", c.Uid);
 
-                if (0 < cmd.ExecuteNonQuery())
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                cmd.ExecuteNonQuery();
+
+                return true;
 
             }
             catch
@@ -69,9 +63,11 @@ namespace SFlightBooking.Connection
         {
             try
             {
-                // create command
                 if (DeleteAllTicketByCustomer(cmd, c))
                 {
+                    // clear parameter
+                    cmd.Parameters.Clear();
+
                     cmd.CommandText = "DELETE FROM Customer WHERE uid = @uid";
 
                     cmd.Parameters.AddWithValue("@uid", c.Uid);
@@ -86,13 +82,13 @@ namespace SFlightBooking.Connection
                     }
                 } else
                 {
-                    return false;
+                    throw new Exception("Failed to remove tickets!");
                 }
 
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception("Remove customer - " + ex.Message.ToString());
             }
         }
 
