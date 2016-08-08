@@ -181,7 +181,6 @@ namespace SFlightBooking
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Refresh customer list when close
             this.Close();
         }
     }

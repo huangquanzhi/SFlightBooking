@@ -38,5 +38,63 @@ namespace SFlightBooking.Connection
 
         }
 
+        private bool DeleteAllTicketByCustomer(MySqlCommand cmd, Customer c)
+        {
+            // Uid is auto-increment
+            try
+            {
+                // create command
+                cmd.CommandText = "DELETE FROM Ticket WHERE uid = @uid";
+
+                cmd.Parameters.AddWithValue("@uid", c.Uid);
+
+                if (0 < cmd.ExecuteNonQuery())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch
+            {
+                throw;
+            }
+
+        }
+
+        public bool RemoveCustomer(MySqlCommand cmd, Customer c)
+        {
+            try
+            {
+                // create command
+                if (DeleteAllTicketByCustomer(cmd, c))
+                {
+                    cmd.CommandText = "DELETE FROM Customer WHERE uid = @uid";
+
+                    cmd.Parameters.AddWithValue("@uid", c.Uid);
+
+                    if (0 < cmd.ExecuteNonQuery())
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                } else
+                {
+                    return false;
+                }
+
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
     }
 }

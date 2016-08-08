@@ -55,8 +55,19 @@ namespace SFlightBooking
             selectedIndex = GetSelectedIndex();
             if (selectedIndex != -1)
             {
-                // todo : delete
-                this.Close();
+                Database db = new Database();
+                Delete delete = new Delete();
+                MySqlConnection conn = db.CreateConnection();
+                if(delete.RemoveCustomer(db.CreateCommand(conn), customerList[selectedIndex]))
+                {
+                    customerList.RemoveAt(selectedIndex);
+                    MessageBox.Show("Customer removed!");
+                    this.Close();
+                } else
+                {
+                    MessageBox.Show("Fail to remove customer from database!");
+                }
+               
             }
         }
 
