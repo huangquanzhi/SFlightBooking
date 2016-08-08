@@ -41,10 +41,10 @@ namespace SFlightBooking.Connection
         /// </summary>
         public Database()
         {
-            address = "localhost";
-            database = "SheridanProject";
-            userName = "root";
-            password = "password";
+            address = "dev.fast.sheridanc.on.ca";
+            database = "huangqu_SheridanProject";
+            userName = "huangqu_project";
+            password = "Sheridanproject123";
 
             connectionString = new MySqlConnectionStringBuilder();
             connectionString.Server = address;

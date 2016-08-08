@@ -94,3 +94,4 @@ C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\b
 C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\obj\Debug\SFlightBooking.TrustInfo.xml
 C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\obj\Debug\SFlightBooking.exe.manifest
 C:\Users\Danerio\Documents\GitHub\SFlightBooking\SFlightBooking\SFlightBooking\obj\Debug\SFlightBooking.application
+C:\Users\Jackie\Desktop\Github\SFlightBooking\SFlightBooking\SFlightBooking\bin\Debug\MahApps.Metro.dll
