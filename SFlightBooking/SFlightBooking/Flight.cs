@@ -25,6 +25,20 @@ namespace SFlightBooking
         private string status;
         private double price;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="flightID"></param>
+        /// <param name="airline"></param>
+        /// <param name="departure"></param>
+        /// <param name="destination"></param>
+        /// <param name="duration"></param>
+        /// <param name="date"></param>
+        /// <param name="time"></param>
+        /// <param name="availableSeats"></param>
+        /// <param name="maxSeats"></param>
+        /// <param name="status"></param>
+        /// <param name="price"></param>
         public Flight(string flightID, string airline, string departure, string destination, int duration, string date, string time, int availableSeats, int maxSeats, string status, double price)
         {
             this.flightID = flightID;
@@ -40,6 +54,19 @@ namespace SFlightBooking
             this.price = price;
         }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="flightID"></param>
+        /// <param name="airline"></param>
+        /// <param name="departure"></param>
+        /// <param name="destination"></param>
+        /// <param name="duration"></param>
+        /// <param name="date"></param>
+        /// <param name="time"></param>
+        /// <param name="availableSeats"></param>
+        /// <param name="maxSeats"></param>
+        /// <param name="status"></param>
         public Flight(string flightID, string airline, string departure, string destination, int duration, string date, string time, int availableSeats, int maxSeats, string status)
         {
             this.flightID = flightID;
@@ -54,6 +81,9 @@ namespace SFlightBooking
             this.status = status;
         }
 
+        /// <summary>
+        /// Flight id
+        /// </summary>
         public string FlightID
         {
             get
@@ -67,6 +97,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Airline 
+        /// </summary>
         public string Airline
         {
             get
@@ -80,6 +113,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Departure
+        /// </summary>
         public string Departure
         {
             get
@@ -93,6 +129,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Destination
+        /// </summary>
         public string Destination
         {
             get
@@ -106,6 +145,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Duration
+        /// </summary>
         public int Duration
         {
             get
@@ -119,6 +161,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Date
+        /// </summary>
         public string Date
         {
             get
@@ -132,6 +177,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Time
+        /// </summary>
         public string Time
         {
             get
@@ -145,6 +193,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// AvailableSeats
+        /// </summary>
         public int AvailableSeats
         {
             get
@@ -158,6 +209,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Max Seats
+        /// </summary>
         public int MaxSeats
         {
             get
@@ -171,6 +225,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Status
+        /// </summary>
         public string Status
         {
             get
@@ -184,6 +241,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Price
+        /// </summary>
         public double Price
         {
             get

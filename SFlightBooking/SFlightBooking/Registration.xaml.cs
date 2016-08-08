@@ -68,7 +68,11 @@ namespace SFlightBooking
             }
         }
 
-
+        /// <summary>
+        /// Register
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_register_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -160,7 +164,9 @@ namespace SFlightBooking
                 MessageBox.Show("Edit error: " + ex.Message.ToString());
             }
         }
-
+        /// <summary>
+        /// Clear form
+        /// </summary>
         private void clear()
         {
             tb_firstName.Text = "";

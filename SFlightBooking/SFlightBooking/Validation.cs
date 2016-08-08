@@ -8,6 +8,11 @@ namespace SFlightBooking
 {
     class Validation
     {
+        /// <summary>
+        /// Date validate
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
         public static bool DateValidate(string date)
         {
             try
@@ -21,6 +26,12 @@ namespace SFlightBooking
                 return false;
             }
         }
+
+        /// <summary>
+        /// Time validate
+        /// </summary>
+        /// <param name="time"></param>
+        /// <returns></returns>
         public static bool TimeValidate(string time)
         {
             try
@@ -35,6 +46,11 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Phone validate
+        /// </summary>
+        /// <param name="phone"></param>
+        /// <returns></returns>
         public static bool PhoneValidate(string phone)
         {
             try

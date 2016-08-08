@@ -40,6 +40,11 @@ namespace SFlightBooking
             listviewLoad();
         }
 
+        /// <summary>
+        /// Remove flight by customer when selected and clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_removeFlight_Click(object sender, RoutedEventArgs e)
         {
             selectedIndex = SelectedIndex();
@@ -79,12 +84,18 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Refresh the listview of flights
+        /// </summary>
         private void refreshList()
         {
             lv_customerFlight.ItemsSource = flightList;
             lv_customerFlight.Items.Refresh();
         }
 
+        /// <summary>
+        /// Load flight information of customer from database
+        /// </summary>
         private void listviewLoad()
         {
             List<Flight> items = new List<Flight>();
@@ -113,6 +124,9 @@ namespace SFlightBooking
 
         }
 
+        /// <summary>
+        /// Create listview 
+        /// </summary>
         private void initListView()
         {
             GridView view = new GridView();
@@ -163,6 +177,10 @@ namespace SFlightBooking
         }
 
 
+        /// <summary>
+        /// Selected index of flight
+        /// </summary>
+        /// <returns>selected index of listview</returns>
         private int SelectedIndex()
         {
             return lv_customerFlight.SelectedIndex;
@@ -173,6 +191,11 @@ namespace SFlightBooking
             this.Close();
         }
 
+        /// <summary>
+        /// View flight information
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_viewFlight_Click(object sender, RoutedEventArgs e)
         {
             selectedIndex = SelectedIndex();
@@ -186,6 +209,11 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Selection changed of customer flight
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lv_customerFlight_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(SelectedIndex() != -1)

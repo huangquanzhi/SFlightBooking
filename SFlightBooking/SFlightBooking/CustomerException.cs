@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace SFlightBooking
 {
+
+    /// <summary>
+    /// Customer Exception 
+    /// </summary>
     class CustomerException : Exception
     {
-
-        public CustomerException()
-        {
-        }
 
         public CustomerException(string message)
         : base(message)

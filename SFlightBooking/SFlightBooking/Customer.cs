@@ -8,10 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SFlightBooking
-{
-    public class Customer
-    {
+namespace SFlightBooking {
+    public class Customer {
         private int uid;
         private string firstName;
         private string lastName;
@@ -26,8 +24,7 @@ namespace SFlightBooking
         /// <summary>
         /// No argument constructer
         /// </summary>
-        public Customer()
-        {
+        public Customer() {
 
         }
 
@@ -43,8 +40,7 @@ namespace SFlightBooking
         /// <param name="enmergencyName"></param>
         /// <param name="enmergencyRelationship"></param>
         /// <param name="enmergencyPhone"></param>
-        public Customer(string firstName, string lastName, string address, string phone, string birthDate, string gender, string enmergencyName, string enmergencyRelationship, string enmergencyPhone)
-        {
+        public Customer(string firstName, string lastName, string address, string phone, string birthDate, string gender, string enmergencyName, string enmergencyRelationship, string enmergencyPhone) {
             this.firstName = firstName;
             this.lastName = lastName;
             this.address = address;
@@ -69,8 +65,7 @@ namespace SFlightBooking
         /// <param name="enmergencyName"></param>
         /// <param name="enmergencyRelationship"></param>
         /// <param name="enmergencyPhone"></param>
-        public Customer(int uid, string firstName, string lastName, string address, string phone, string birthDate, string gender, string enmergencyName, string enmergencyRelationship, string enmergencyPhone)
-        {
+        public Customer(int uid, string firstName, string lastName, string address, string phone, string birthDate, string gender, string enmergencyName, string enmergencyRelationship, string enmergencyPhone) {
             this.uid = uid;
             this.firstName = firstName;
             this.lastName = lastName;
@@ -86,21 +81,15 @@ namespace SFlightBooking
         /// <summary>
         /// Getter and Setter for FirstName attribute
         /// </summary>
-        public string FirstName
-        {
-            get
-            {
+        public string FirstName {
+            get {
                 return firstName;
             }
 
-            set
-            {
-                if (value != "")
-                {
+            set {
+                if (value != "") {
                     firstName = value;
-                }
-                else
-                {
+                } else {
                     throw new CustomerException("First name can not be empty!");
                 }
             }
@@ -109,21 +98,15 @@ namespace SFlightBooking
         /// <summary>
         /// Getter and Setter for LastName attribute
         /// </summary>
-        public string LastName
-        {
-            get
-            {
+        public string LastName {
+            get {
                 return lastName;
             }
 
-            set
-            {
-                if (value != "")
-                {
+            set {
+                if (value != "") {
                     lastName = value;
-                }
-                else
-                {
+                } else {
                     throw new CustomerException("Last name can not be empty!");
                 }
             }
@@ -132,21 +115,15 @@ namespace SFlightBooking
         /// <summary>
         /// Getter and Setter for address attrbiute
         /// </summary>
-        public string Address
-        {
-            get
-            {
+        public string Address {
+            get {
                 return address;
             }
 
-            set
-            {
-                if (value != "")
-                {
+            set {
+                if (value != "") {
                     address = value;
-                }
-                else
-                {
+                } else {
                     throw new CustomerException("Address can not be empty!");
                 }
             }
@@ -155,55 +132,33 @@ namespace SFlightBooking
         /// <summary>
         /// Getter and setter for phone attribute
         /// </summary>
-        public string Phone
-        {
-            get
-            {
+        public string Phone {
+            get {
                 return phone;
             }
 
-            set
-            {
-                if (value != "")
-                {
-                    if (Validation.PhoneValidate(value))
-                    {
-                        phone = value;
-                    }
-                    else
-                    {
-                        throw new CustomerException("Phone must be a 10 digit number.");
-                    }
-                }
-                else
-                {
+            set {
+                if (value != "") {
+                    phone = value;
+                } else {
                     throw new CustomerException("Phone can not be empty!");
                 }
             }
         }
 
-        public string BirthDate
-        {
-            get
-            {
+        public string BirthDate {
+            get {
                 return birthDate;
             }
 
-            set
-            {
-                if (value != "")
-                {
-                    if (Validation.DateValidate(value))
-                    {
+            set {
+                if (value != "") {
+                    if (Validation.DateValidate(value)) {
                         birthDate = value;
-                    }
-                    else
-                    {
+                    } else {
                         throw new CustomerException("Date must be in the format yyyy-mm-dd");
                     }
-                }
-                else
-                {
+                } else {
                     throw new CustomerException("Birth Date can not be empty!");
                 }
             }
@@ -211,21 +166,15 @@ namespace SFlightBooking
         /// <summary>
         /// Getter and setter for gender attribute
         /// </summary>
-        public string Gender
-        {
-            get
-            {
+        public string Gender {
+            get {
                 return gender;
             }
 
-            set
-            {
-                if (value != "")
-                {
+            set {
+                if (value != "") {
                     gender = value;
-                }
-                else
-                {
+                } else {
                     throw new CustomerException("Gender can not be empty!");
                 }
             }
@@ -234,41 +183,29 @@ namespace SFlightBooking
         /// <summary>
         /// Getter and setter for emergencyName attribute
         /// </summary>
-        public string EnmergencyName
-        {
-            get
-            {
+        public string EnmergencyName {
+            get {
                 return enmergencyName;
             }
 
-            set
-            {
-                if (value != "")
-                {
+            set {
+                if (value != "") {
                     enmergencyName = value;
-                }
-                else
-                {
+                } else {
                     throw new CustomerException("Enmergency Name can not be empty!");
                 }
             }
         }
 
-        public string EnmergencyRelationship
-        {
-            get
-            {
+        public string EnmergencyRelationship {
+            get {
                 return enmergencyRelationship;
             }
 
-            set
-            {
-                if (value != "")
-                {
+            set {
+                if (value != "") {
                     enmergencyRelationship = value;
-                }
-                else
-                {
+                } else {
                     throw new CustomerException("Enmergency Relationship can not be empty!");
                 }
             }
@@ -277,28 +214,15 @@ namespace SFlightBooking
         /// <summary>
         /// Getter and setter for emergencyphone attribute
         /// </summary>
-        public string EnmergencyPhone
-        {
-            get
-            {
+        public string EnmergencyPhone {
+            get {
                 return enmergencyPhone;
             }
 
-            set
-            {
-                if (value != "")
-                {
-                    if (Validation.PhoneValidate(value))
-                    {
-                        enmergencyPhone = value;
-                    }
-                    else
-                    {
-                        throw new CustomerException("Emergency phone must be a 10 digit number.");
-                    }
-                }
-                else
-                {
+            set {
+                if (value != "") {
+                    enmergencyPhone = value;
+                } else {
                     throw new CustomerException("Enmergency Phone can not be empty!");
                 }
             }
@@ -307,15 +231,12 @@ namespace SFlightBooking
         /// <summary>
         /// Getter and setter for id attribute
         /// </summary>
-        public int Uid
-        {
-            get
-            {
+        public int Uid {
+            get {
                 return uid;
             }
 
-            set
-            {
+            set {
                 uid = value;
             }
         }

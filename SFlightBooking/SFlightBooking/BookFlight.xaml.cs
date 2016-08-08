@@ -37,6 +37,12 @@ namespace SFlightBooking
             customerListLoad();
         }
 
+
+        /// <summary>
+        /// Book flight on click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_bookFlight_Click(object sender, RoutedEventArgs e)
         {
 
@@ -79,6 +85,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Load customer from database to list view
+        /// </summary>
         private void customerListLoad()
         {
             Database db = new Database();
@@ -106,6 +115,9 @@ namespace SFlightBooking
 
         }
 
+        /// <summary>
+        /// Load flight list from database
+        /// </summary>
         private void listviewLoad()
         {
             Database db = new Database();
@@ -139,6 +151,9 @@ namespace SFlightBooking
 
         }
 
+        /// <summary>
+        /// Initialize list view for flights
+        /// </summary>
         private void initListView()
         {
             GridView view = new GridView();
@@ -170,21 +185,39 @@ namespace SFlightBooking
             lv_flights.View = view;
         }
 
+        /// <summary>
+        /// Selected flight index
+        /// </summary>
+        /// <returns>flight index</returns>
         private int SelectedFlightIndex()
         {
             return lv_flights.SelectedIndex;
         }
 
+        /// <summary>
+        /// Selected customer index
+        /// </summary>
+        /// <returns>Customer index</returns>
         private int SelectedCustomerIndex()
         {
             return lb_customers.SelectedIndex;
         }
 
+        /// <summary>
+        /// Close form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// View flight information on click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_viewFlight_Click(object sender, RoutedEventArgs e)
         {
             flightIndex = SelectedFlightIndex();
@@ -196,17 +229,30 @@ namespace SFlightBooking
 
         }
 
+        /// <summary>
+        /// Customer selection changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lb_customers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnableBookFlight();
         }
 
+        /// <summary>
+        /// Flight selection changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lv_flights_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnableBookFlight();
             EnableViewFlight();
         }
 
+        /// <summary>
+        /// Enable view flight button 
+        /// </summary>
         private void EnableViewFlight()
         {
             flightIndex = SelectedFlightIndex();
@@ -221,6 +267,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Enable book flight button when both customer and flight selected
+        /// </summary>
         private void EnableBookFlight()
         {
             flightIndex = SelectedFlightIndex();

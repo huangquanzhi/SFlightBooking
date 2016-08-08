@@ -34,6 +34,11 @@ namespace SFlightBooking
 
         }
 
+        /// <summary>
+        /// Display edit form of selected customer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
             selectedIndex = GetSelectedIndex();
@@ -50,6 +55,11 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Deleted customer from database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_delete_Click(object sender, RoutedEventArgs e)
         {
             selectedIndex = GetSelectedIndex();
@@ -79,6 +89,11 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Display customers flight table form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_viewRecord_Click(object sender, RoutedEventArgs e)
         {
             selectedIndex = GetSelectedIndex();
@@ -93,15 +108,9 @@ namespace SFlightBooking
             }
         }
 
-        private void btn_book_Click(object sender, RoutedEventArgs e)
-        {
-            selectedIndex = GetSelectedIndex();
-            if (selectedIndex != -1)
-            {
-
-            }
-        }
-
+        /// <summary>
+        ///  load customer list from database
+        /// </summary>
         private void listviewLoad()
         {
             Database db = new Database();
@@ -123,6 +132,9 @@ namespace SFlightBooking
             }
         }
 
+        /// <summary>
+        /// Create a list view of customer
+        /// </summary>
         private void initListView()
         {
             GridView view = new GridView();
@@ -169,11 +181,20 @@ namespace SFlightBooking
 
         }
 
+        /// <summary>
+        /// Selected index of customer list
+        /// </summary>
+        /// <returns>Index of selected customer</returns>
         public int GetSelectedIndex()
         {
             return lv_customerList.SelectedIndex;
         }
 
+        /// <summary>
+        /// Customer selection changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lv_customerList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(GetSelectedIndex() != -1)

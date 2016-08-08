@@ -27,6 +27,7 @@ namespace SFlightBooking
             InitializeComponent();
         }
 
+
         public FlightInfo(Flight f)
         {
             flightInfo = f;
@@ -34,6 +35,9 @@ namespace SFlightBooking
             loadForm();
         }
 
+        /// <summary>
+        /// Load form by flight information provided
+        /// </summary>
         public void loadForm()
         {
             if (flightInfo != null)
